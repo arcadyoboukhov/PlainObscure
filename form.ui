@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>Form</class>
+ <widget class="QWidget" name="Form">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>500</width>
+    <height>400</height>
+   </rect>
+  </property>
+  <property name="font">
+   <font>
+    <family>Courier New</family>
+    <pointsize>2</pointsize>
+   </font>
+  </property>
+  <property name="windowTitle">
+   <string>How to use</string>
+  </property>
+  <property name="styleSheet">
+   <string>
+     background-color: black; 
+     color: green; 
+     font-family: 'Courier New', Courier, monospace; 
+   </string>
+  </property>
+  <layout class="QGridLayout" name="gridLayout">
+   <item row="0" column="0">
+    <widget class="QLabel" name="label">
+     <property name="sizeIncrement">
+      <size>
+       <width>0</width>
+       <height>0</height>
+      </size>
+     </property>
+     <property name="font">
+      <font>
+       <family>Courier New</family>
+       <pointsize>7</pointsize>
+       <bold>true</bold>
+       <kerning>true</kerning>
+      </font>
+     </property>
+     <property name="text">
+      <string>PlainObscure is an innovative password manager that ensures your sensitive information remains hidden yet easily accessible. By ingeniously concealing passwords within JPEG and PNG files, it offers a dual layer of security that is both discreet and practical. Each password is protected by military-grade encryption, providing robust defense against cyber threats and unauthorized access. This unique approach not only elevates the security of your credentials but also disguises them among harmless images, making it nearly impossible for potential hackers to identify targets. Users can seamlessly integrate PlainObscure into their daily digital routines—whether sharing files or storing images, their passwords remain virtually untraceable. The user-friendly interface simplifies the process of saving and retrieving passwords, while the advanced encryption algorithms ensure that even if an image file is compromised, the embedded passwords remain secure. With data breaches on the rise and personal privacy under constant threat, PlainObscure serves as a vital tool for individuals and businesses alike, striking the perfect balance between usability and security. In a world where information safety is paramount, adopting PlainObscure means investing in a future where your passwords are not only hidden in plain sight but also fortified against the ever-evolving landscape of cyber threats.</string>
+     </property>
+     <property name="scaledContents">
+      <bool>false</bool>
+     </property>
+     <property name="wordWrap">
+      <bool>true</bool>
+     </property>
+     <property name="textInteractionFlags">
+      <set>Qt::TextInteractionFlag::LinksAccessibleByMouse</set>
+     </property>
+    </widget>
+   </item>
+   <item row="1" column="0">
+    <widget class="QPushButton" name="goBackButton">
+     <property name="minimumSize">
+      <size>
+       <width>0</width>
+       <height>50</height>
+      </size>
+     </property>
+     <property name="font">
+      <font>
+       <family>Courier New</family>
+       <pointsize>20</pointsize>
+       <bold>true</bold>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string>
+          background-color: black; 
+          color: green; 
+          border: 1px solid green;
+        </string>
+     </property>
+     <property name="text">
+      <string>Back</string>
+     </property>
+    </widget>
+   </item>
+  </layout>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>

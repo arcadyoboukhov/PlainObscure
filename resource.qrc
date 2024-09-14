@@ -1,0 +1,5 @@
+<RCC>
+    <qresource prefix="/">
+        <file>assets/plainobscure.png</file>
+    </qresource>
+</RCC>
