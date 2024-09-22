@@ -59,7 +59,8 @@ private:
     // Declare the function here
     QImage embedDataInImage(const QImage& image, const QByteArray& data);
     QByteArray extractDataFromImage(const QImage& image);
-
+    QString QByteArrayToBinaryString(const QByteArray& byteArray);
+    QByteArray BinaryStringToQByteArray(const QString& binaryString);
 
 
 };

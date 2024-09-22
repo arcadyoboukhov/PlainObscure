@@ -87,41 +87,70 @@ void password::onGoBackButtonClicked() {
              QString extractedMessage = lsb.extractMessage(loadedImage);
              qDebug() << "Extracted Message:" << extractedMessage;
 
+             // Convert binary string back to QByteArray
+             QByteArray reconstructedData = BinaryStringToQByteArray(extractedMessage);
+             qDebug() << "Reconstructed QByteArray:" << reconstructedData;
 
 
-            // auto result = extractSaltAndEncryptedData(extractedData);
-            // QByteArray extractedSalt = result.first;
-            // QByteArray extractedEncryptedData = result.second;
+            auto result = extractSaltAndEncryptedData(reconstructedData);
+            QByteArray extractedSalt = result.first;
+            QByteArray extractedEncryptedData = result.second;
 
-            // derivedKey = deriveKeyFromPassword(*masterPassword, extractedSalt);
-            // hashedKey = QCryptographicHash::hash(derivedKey, QCryptographicHash::Sha256);
-            // QByteArray decryptedCompressedData = decryptData(extractedEncryptedData, derivedKey);
-            // QByteArray uncompressedData = uncompressData(decryptedCompressedData);
+            derivedKey = deriveKeyFromPassword(*masterPassword, extractedSalt);
+            hashedKey = QCryptographicHash::hash(derivedKey, QCryptographicHash::Sha256);
+            QByteArray decryptedCompressedData = decryptData(extractedEncryptedData, derivedKey);
+            QByteArray uncompressedData = uncompressData(decryptedCompressedData);
 
 
 
             } else if (value == 0) {
         qDebug() << "NO -------------------- hidden data.";
+                    QByteArray compressedData = compressData(getDataFromDB());
+                    QByteArray encryptedCompressedData = encryptData(compressedData, derivedKey);
+                    QByteArray combinedData = combineSaltAndEncryptedData(salt, encryptedCompressedData);
 
+                    QString binaryString = QByteArrayToBinaryString(combinedData);
+                    qDebug() << "Binary String:" << binaryString;
 
+                    qDebug() << "data string ::::"<< binaryString;
         // Embed a message
-        QString message = "Hello, World!";
+        QString message = binaryString;
         if (lsb.embedMessage(image, message)) {
             image.save("embedded_image.png");
             qDebug() << "Message embedded successfully!";
         } else {
             qDebug() << "Failed to embed message.";
         }
-                    // QByteArray compressedData = compressData(getDataFromDB());
-                    // QByteArray encryptedCompressedData = encryptData(compressedData, derivedKey);
-                    // QByteArray combinedData = combineSaltAndEncryptedData(salt, encryptedCompressedData);
 
 
      }
 }
 
 
+QString password::QByteArrayToBinaryString(const QByteArray& byteArray) {
+    QString binaryString;
+    for (char byte : byteArray) {
+        for (int i = 7; i >= 0; --i) {
+            binaryString.append((byte & (1 << i)) ? '1' : '0');
+        }
+    }
+    return binaryString;
+}
 
+QByteArray password::BinaryStringToQByteArray(const QString& binaryString) {
+    QByteArray byteArray;
+    for (int i = 0; i < binaryString.length(); i += 8) {
+        if (i + 7 < binaryString.length()) {
+            QString byteString = binaryString.mid(i, 8);
+            bool ok;
+            char byte = byteString.toInt(&ok, 2); // Convert from binary (base 2)
+            if (ok) {
+                byteArray.append(byte);
+            }
+        }
+    }
+    return byteArray;
+}
     // this->hide(); // Hide the settings window
        // mainWindow->show(); // Show the main window
 
