@@ -1,0 +1,64 @@
+#ifndef PASSWORD_H
+#define PASSWORD_H
+
+#include <QWidget>
+#include <QSlider>
+#include <QLabel>
+#include <QPushButton>
+#include "mainwindow.h" // Include the MainWindow header
+#include <QByteArray>
+#include <QImage>
+#include <QColor>
+#include <iostream>
+
+using namespace std; // Make std's names available
+
+
+namespace Ui {
+class password;
+}
+
+class MainWindow; // Forward declaration
+
+class password : public QWidget {
+    Q_OBJECT
+
+public:
+    explicit password(MainWindow *mainWindow, QWidget *parent = nullptr);
+    ~password();
+
+
+public slots:
+    void onGoBackButtonClicked(); // Slot for the Go Back button click
+    QString onSelectImagesButtonClicked(QWidget *parent);
+    QByteArray compressData(const QByteArray &data);       // Declare compressData method
+    QByteArray encryptData(const QByteArray &data, const QByteArray &key);  // Declare encryptData method
+    void createDB();
+    QByteArray uncompressData(const QByteArray &compressedData);
+    QByteArray getDataFromDB();
+    QByteArray decryptData(const QByteArray &encryptedData, const QByteArray &key);
+public:
+    Ui::password *ui;            // Pointer to the UI
+    MainWindow *mainWindow;  // Pointer to the MainWindow
+
+    // Method declarations
+    QByteArray deriveKeyFromPassword(const QString &password, const QByteArray &salt, int iterations = 1000000, int keyLength = 32);
+    QByteArray generateRandomSalt(int length = 32);
+
+    // Declare the pbkdf2_hmac_sha256 method
+    QByteArray pbkdf2_hmac_sha256(const QByteArray &password, const QByteArray &salt, int iterations, int keyLength);
+    QByteArray combineSaltAndEncryptedData(const QByteArray &salt, const QByteArray &encryptedData);
+    std::pair<QByteArray, QByteArray>  extractSaltAndEncryptedData(const QByteArray &combinedData);
+    bool hasHiddenDataInImage(const QString &imagePath);
+    void printDatabaseContents();
+
+private:
+    std::unique_ptr<QString> masterPassword{ std::make_unique<QString>() }; // Initialize here
+    QByteArray salt;
+    QByteArray derivedKey;
+
+
+
+};
+
+#endif // PASSWORD_H
