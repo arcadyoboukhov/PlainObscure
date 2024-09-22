@@ -49,13 +49,15 @@ public:
     QByteArray pbkdf2_hmac_sha256(const QByteArray &password, const QByteArray &salt, int iterations, int keyLength);
     QByteArray combineSaltAndEncryptedData(const QByteArray &salt, const QByteArray &encryptedData);
     std::pair<QByteArray, QByteArray>  extractSaltAndEncryptedData(const QByteArray &combinedData);
-    bool hasHiddenDataInImage(const QString &imagePath);
     void printDatabaseContents();
 
 private:
     std::unique_ptr<QString> masterPassword{ std::make_unique<QString>() }; // Initialize here
     QByteArray salt;
     QByteArray derivedKey;
+    // Declare the function here
+    QImage embedDataInImage(const QImage& image, const QByteArray& data);
+    QByteArray extractDataFromImage(const QImage& image);
 
 
 
