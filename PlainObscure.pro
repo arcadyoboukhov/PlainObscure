@@ -24,6 +24,7 @@ CONFIG += c++17
 # Update the path for your source files
 SOURCES += \
     src/form.cpp \
+    src/lsbsteganography.cpp \
     src/main.cpp \
     src/mainwindow.cpp \
     src/manager.cpp \
@@ -32,12 +33,14 @@ SOURCES += \
 # Update the path for your header files
 HEADERS += \
     src/form.h \
+    src/lsbsteganography.h \
     src/mainwindow.h \
     src/manager.h \
     src/password.h
 
 FORMS += \
     src/form.ui \
+    src/lsbsteganography.ui \
     src/mainwindow.ui \
     src/manager.ui \
     src/password.ui

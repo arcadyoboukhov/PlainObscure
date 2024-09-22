@@ -21,7 +21,7 @@
 #include <zlib.h>
 #include <QBuffer>
 #include <openssl\evp.h>
-
+#include "lsbsteganography.h"
 #include <openssl/rand.h>
 #include <iostream>
 #include <QImage>
@@ -43,7 +43,7 @@ int value;
 
 using namespace cv;
 using namespace std;
-
+LSBSteganography lsb;
 
 // Constructor for the Form class
 password::password(MainWindow *mainWindow, QWidget *parent)
@@ -71,42 +71,51 @@ void password::onGoBackButtonClicked() {
     QByteArray hashedKey = QCryptographicHash::hash(derivedKey, QCryptographicHash::Sha256);
     value = ui->horizontalSlider->value();
 
-
+    QImage image(filePath);
     if (value == 1) {
              qDebug() << "YES -------------------- hidden data.";
         // Extract data from the image
 
-             QImage image(filePath);
-            QByteArray extractedData = extractDataFromImage(image);
-             // Encode the QByteArray to Base64
-             QByteArray base64Data = extractedData.toBase64();
-
-             // Print the Base64 encoded data
-            qDebug() << "Extracted Data in Base64:" << base64Data;
-
-            auto result = extractSaltAndEncryptedData(extractedData);
-            QByteArray extractedSalt = result.first;
-            QByteArray extractedEncryptedData = result.second;
-
-            derivedKey = deriveKeyFromPassword(*masterPassword, extractedSalt);
-            hashedKey = QCryptographicHash::hash(derivedKey, QCryptographicHash::Sha256);
-            QByteArray decryptedCompressedData = decryptData(extractedEncryptedData, derivedKey);
-            QByteArray uncompressedData = uncompressData(decryptedCompressedData);
 
 
+
+
+
+
+             // Extract the message
+             QImage loadedImage(filePath);
+             QString extractedMessage = lsb.extractMessage(loadedImage);
+             qDebug() << "Extracted Message:" << extractedMessage;
+
+
+
+            // auto result = extractSaltAndEncryptedData(extractedData);
+            // QByteArray extractedSalt = result.first;
+            // QByteArray extractedEncryptedData = result.second;
+
+            // derivedKey = deriveKeyFromPassword(*masterPassword, extractedSalt);
+            // hashedKey = QCryptographicHash::hash(derivedKey, QCryptographicHash::Sha256);
+            // QByteArray decryptedCompressedData = decryptData(extractedEncryptedData, derivedKey);
+            // QByteArray uncompressedData = uncompressData(decryptedCompressedData);
 
 
 
             } else if (value == 0) {
         qDebug() << "NO -------------------- hidden data.";
-                    QByteArray compressedData = compressData(getDataFromDB());
-                    QByteArray encryptedCompressedData = encryptData(compressedData, derivedKey);
-                    QByteArray combinedData = combineSaltAndEncryptedData(salt, encryptedCompressedData);
 
-                    QImage image(filePath);
-                    // Embed data into the image
-                    QImage modifiedImage = embedDataInImage(image, combinedData);
-                    modifiedImage.save("output.png");
+
+        // Embed a message
+        QString message = "Hello, World!";
+        if (lsb.embedMessage(image, message)) {
+            image.save("embedded_image.png");
+            qDebug() << "Message embedded successfully!";
+        } else {
+            qDebug() << "Failed to embed message.";
+        }
+                    // QByteArray compressedData = compressData(getDataFromDB());
+                    // QByteArray encryptedCompressedData = encryptData(compressedData, derivedKey);
+                    // QByteArray combinedData = combineSaltAndEncryptedData(salt, encryptedCompressedData);
+
 
      }
 }
@@ -423,91 +432,6 @@ void printDatabaseContents() {
 
 
 
-QImage password::embedDataInImage(const QImage &image, const QByteArray &data) {
-    QImage resultImage = image.convertToFormat(QImage::Format_ARGB32);  // Ensure consistent format
-    int dataSize = data.size();  // Get the size of the data to embed
-
-    // Convert the size of the data into a 32-bit integer (store 4 bytes for size)
-    QByteArray sizeBytes(4, 0);  // Reserve 4 bytes for the size header
-    sizeBytes[0] = (dataSize >> 24) & 0xFF;
-    sizeBytes[1] = (dataSize >> 16) & 0xFF;
-    sizeBytes[2] = (dataSize >> 8) & 0xFF;
-    sizeBytes[3] = dataSize & 0xFF;
-
-    int totalBits = (dataSize * 8) + (4 * 8);  // Data bits + 32 bits for size
-    int bitIndex = 0;
-
-    // Loop through each pixel in the image
-    for (int y = 0; y < resultImage.height(); ++y) {
-        for (int x = 0; x < resultImage.width(); ++x) {
-            if (bitIndex >= totalBits)  // Stop when all bits are embedded
-                return resultImage;
-
-            QRgb pixel = resultImage.pixel(x, y);
-            uchar red = qRed(pixel);
-            uchar green = qGreen(pixel);
-            uchar blue = qBlue(pixel);
-
-            // Embed the size first (32 bits)
-            int dataByte;
-            if (bitIndex < 32) {  // Embed the size in the first 32 bits
-                dataByte = sizeBytes[bitIndex / 8];
-            } else {  // Embed the actual data after the size
-                dataByte = data[(bitIndex - 32) / 8];
-            }
-
-            // Check that dataByte exists within bounds
-            if ((bitIndex - 32) / 8 < data.size() || bitIndex < 32) {
-                int dataBit = (dataByte >> (7 - (bitIndex % 8))) & 1;
-                blue = (blue & 0xFE) | dataBit;  // Modify LSB of blue channel
-            }
-
-            resultImage.setPixel(x, y, qRgb(red, green, blue));
-
-            ++bitIndex;  // Move to the next bit
-        }
-    }
-
-    return resultImage;
-}
-
-
-
-QByteArray password::extractDataFromImage(const QImage &image) {
-    QImage formattedImage = image.convertToFormat(QImage::Format_ARGB32);  // Ensure consistent format
-    QByteArray extractedData;
-    int bitIndex = 0;
-    char currentByte = 0;
-    int dataSize = 0;
-
-    // First, extract the 32-bit size header (4 bytes)
-    for (int y = 0; y < formattedImage.height(); ++y) {
-        for (int x = 0; x < formattedImage.width(); ++x) {
-            QRgb pixel = formattedImage.pixel(x, y);
-            uchar blue = qBlue(pixel);
-            int extractedBit = blue & 1;
-
-            currentByte = (currentByte << 1) | extractedBit;
-
-            if (++bitIndex % 8 == 0) {
-                if (bitIndex <= 32) {  // Extract size from the first 4 bytes (32 bits)
-                    dataSize = (dataSize << 8) | static_cast<uchar>(currentByte);
-                    currentByte = 0;  // Reset the byte accumulator
-                } else {  // Now extract the actual data
-                    if (extractedData.size() < dataSize) {  // Ensure we don't exceed expected size
-                        extractedData.append(currentByte);
-                    }
-                    currentByte = 0;
-
-                    if (extractedData.size() >= dataSize)  // Stop when all data is extracted
-                        return extractedData;
-                }
-            }
-        }
-    }
-
-    return extractedData;  // Return the extracted data
-}
 
 
 

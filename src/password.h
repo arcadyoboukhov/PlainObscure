@@ -10,6 +10,7 @@
 #include <QImage>
 #include <QColor>
 #include <iostream>
+#include <QString>
 
 using namespace std; // Make std's names available
 
