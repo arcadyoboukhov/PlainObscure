@@ -5,20 +5,19 @@
 #include <QSlider>
 #include <QLabel>
 #include <QPushButton>
-#include "mainwindow.h" // Include the MainWindow header
 #include "password.h"
 
 namespace Ui {
 class manager;
 }
 
-class MainWindow; // Forward declaration
+class password; // Forward declaration
 
 class manager : public QWidget {
     Q_OBJECT
 
 public:
-    explicit manager(MainWindow *mainWindow, QWidget *parent = nullptr);
+    explicit manager(password *pass, QWidget *parent = nullptr);
     ~manager();
 
 public slots:
@@ -26,8 +25,7 @@ public slots:
 
 public:
     Ui::manager *ui;            // Pointer to the UI
-    MainWindow *mainWindow;  // Pointer to the MainWindow
-    QByteArray set(const QByteArray &uncompressedData);
+    password *pass;  // Pointer to the MainWindow
 };
 
 #endif // FORM_H

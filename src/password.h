@@ -20,6 +20,7 @@ class password;
 }
 
 class MainWindow; // Forward declaration
+class manager;
 
 class password : public QWidget {
     Q_OBJECT
@@ -55,6 +56,7 @@ public:
     void kill();
     QByteArray get();
     void set(QByteArray passwordDB);
+    manager *managerInstance;
 private:
     std::unique_ptr<QString> masterPassword{ std::make_unique<QString>() }; // Initialize here
     QByteArray salt;

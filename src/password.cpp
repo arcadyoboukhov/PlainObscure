@@ -28,12 +28,14 @@
 #include <QFile>
 #include <QDataStream>
 #include <utility>
+#include <QFileInfo>
 #include <opencv2/opencv.hpp>
 
 // Or specific modules
 #include "C:\opencv\build\include\opencv2/core.hpp"
 #include <opencv2/highgui.hpp>
 #include <opencv2/imgproc.hpp>
+#include "manager.h"
 
 QString filePath;
 std::unique_ptr<QString> masterPassword = std::make_unique<QString>();
@@ -53,14 +55,23 @@ password::password(MainWindow *mainWindow, QWidget *parent)
     , mainWindow(mainWindow)
 {
     ui->setupUi(this);
-    connect(ui->pushButton, &QPushButton::clicked, this, &password::onGoBackButtonClicked);
+    managerInstance = new manager(this);
+
+
+
+    connect(ui->managerButton, &QPushButton::clicked, this, &password::onGoBackButtonClicked);
+
     connect(ui->pushButton_2, &QPushButton::clicked, this, &password::fileSelectButton);
 
 
 
 }
 
-
+// Function to get the file name from a given file path
+QString getFileNameFromFilePath(const QString &filePath) {
+    QFileInfo fileInfo(filePath);
+    return fileInfo.fileName(); // This will return just the name of the file
+}
 
 // On back button clicked
 void password::onGoBackButtonClicked() {
@@ -83,15 +94,15 @@ void password::onGoBackButtonClicked() {
 
 
 
-
+            //I hid the debug functions because they can lag low end pcs
              // Extract the message
              QImage loadedImage(filePath);
              QString extractedMessage = lsb.extractMessage(loadedImage);
-             qDebug() << "Extracted Message:" << extractedMessage;
+             // qDebug() << "Extracted Message:" << extractedMessage;
 
              // Convert binary string back to QByteArray
              QByteArray reconstructedData = BinaryStringToQByteArray(extractedMessage);
-             qDebug() << "Reconstructed QByteArray:" << reconstructedData;
+             // qDebug() << "Reconstructed QByteArray:" << reconstructedData;
 
 
             auto result = extractSaltAndEncryptedData(reconstructedData);
@@ -103,11 +114,13 @@ void password::onGoBackButtonClicked() {
             QByteArray decryptedCompressedData = decryptData(extractedEncryptedData, derivedKey);
             QByteArray uncompressedData = uncompressData(decryptedCompressedData);
 
+
+            //debug functions
             // Now we need to parse the uncompressedData and insert it into the DB
-            parseAndInsertData(uncompressedData);
+            // parseAndInsertData(uncompressedData);
 
             // Now call the function to print the data
-            printDatabaseContents();
+            // printDatabaseContents();
 
             } else if (value == 0) {
         qDebug() << "NO -------------------- hidden data.";
@@ -116,13 +129,15 @@ void password::onGoBackButtonClicked() {
                     QByteArray combinedData = combineSaltAndEncryptedData(salt, encryptedCompressedData);
 
                     QString binaryString = QByteArrayToBinaryString(combinedData);
-                    qDebug() << "Binary String:" << binaryString;
+                    // qDebug() << "Binary String:" << binaryString;
 
-                    qDebug() << "data string ::::"<< binaryString;
+                    // qDebug() << "data string ::::"<< binaryString;
+
         // Embed a message
         QString message = binaryString;
+        QString fileName = getFileNameFromFilePath(filePath);
         if (lsb.embedMessage(image, message)) {
-            image.save("embedded_image.png");
+            image.save(fileName + ".png");
             qDebug() << "Message embedded successfully!";
         } else {
             qDebug() << "Failed to embed message.";
@@ -130,6 +145,9 @@ void password::onGoBackButtonClicked() {
 
 
      }
+
+    this->hide();
+    managerInstance->show();
 }
 
 

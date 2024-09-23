@@ -2,10 +2,10 @@
 #include "ui_manager.h"
 
 // Constructor for the Form class
-manager::manager(MainWindow *mainWindow, QWidget *parent)
+manager::manager(password *pass, QWidget *parent)
     : QWidget(parent)
     , ui(new Ui::manager)
-    , mainWindow(mainWindow)
+    , pass(pass)
 {
     ui->setupUi(this);
 
@@ -15,11 +15,7 @@ manager::manager(MainWindow *mainWindow, QWidget *parent)
 // On back button clicked
 void manager::onGoBackButtonClicked() {
     this->hide(); // Hide the settings window
-    mainWindow->show(); // Show the main window
-}
-
-QByteArray manager::set(const QByteArray &uncompressedData) {
-    return uncompressedData;
+    pass->show(); // Show the main window
 }
 
 manager::~manager() {
