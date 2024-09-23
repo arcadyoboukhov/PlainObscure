@@ -29,6 +29,7 @@
 #include <QDataStream>
 #include <utility>
 #include <opencv2/opencv.hpp>
+
 // Or specific modules
 #include "C:\opencv\build\include\opencv2/core.hpp"
 #include <opencv2/highgui.hpp>
@@ -53,6 +54,7 @@ password::password(MainWindow *mainWindow, QWidget *parent)
 {
     ui->setupUi(this);
     connect(ui->pushButton, &QPushButton::clicked, this, &password::onGoBackButtonClicked);
+    connect(ui->pushButton_2, &QPushButton::clicked, this, &password::fileSelectButton);
 
 
 
@@ -101,7 +103,11 @@ void password::onGoBackButtonClicked() {
             QByteArray decryptedCompressedData = decryptData(extractedEncryptedData, derivedKey);
             QByteArray uncompressedData = uncompressData(decryptedCompressedData);
 
+            // Now we need to parse the uncompressedData and insert it into the DB
+            parseAndInsertData(uncompressedData);
 
+            // Now call the function to print the data
+            printDatabaseContents();
 
             } else if (value == 0) {
         qDebug() << "NO -------------------- hidden data.";
@@ -125,6 +131,82 @@ void password::onGoBackButtonClicked() {
 
      }
 }
+
+
+// File select button implementation
+void password::fileSelectButton() {
+    // Define the file type filters for JPEG and PNG
+    QStringList filters;
+    filters << "Images (*.jpeg *.jpg *.png)";
+
+    // Open the file dialog and get the selected file path
+    QString fileName = QFileDialog::getOpenFileName(this, "Select Image", "", filters.join(";;"));
+
+    if (!fileName.isEmpty()) {
+        filePath = fileName;
+        qDebug() << "Selected file:" << filePath; // Log the selected file path
+    } else {
+        qDebug() << "No file selected."; // Handle the case where user cancels the dialog
+    }
+}
+
+
+struct UserData {
+    QString name;
+    QString username;
+    QString password;
+};
+
+
+
+void password::parseAndInsertData(const QByteArray &data) {
+    QSqlDatabase db = QSqlDatabase::database();
+
+    if (!db.open()) {
+        qDebug() << "Error: Unable to open database.";
+        return;
+    }
+
+    QList<UserData> users; // Change here to use UserData
+
+    // Parse the data line-by-line
+    QList<QByteArray> lines = data.split('\n');
+
+    QString name, username, password;
+    for (const auto &line : lines) {
+        if (line.startsWith("Name: ")) {
+            if (!name.isEmpty() && !username.isEmpty() && !password.isEmpty()) {
+                users.append({name, username, password}); // Store the previous user data
+            }
+            name = line.mid(6).trimmed(); // Extract name
+        } else if (line.startsWith("Username: ")) {
+            username = line.mid(10).trimmed(); // Extract username
+        } else if (line.startsWith("Password: ")) {
+            password = line.mid(10).trimmed(); // Extract password
+        }
+    }
+    // Append the last user
+    if (!name.isEmpty() && !username.isEmpty() && !password.isEmpty()) {
+        users.append({name, username, password}); // Store the last user
+    }
+
+    // Now insert parsed users into the database
+    QSqlQuery query;
+    query.prepare("INSERT INTO Users (name, username, password) VALUES (?, ?, ?)");
+
+    for (const auto &user : users) {
+        query.addBindValue(user.name);
+        query.addBindValue(user.username);
+        query.addBindValue(user.password);
+
+        if (!query.exec()) {
+            qDebug() << "Error inserting user:" << query.lastError().text();
+        }
+    }
+
+    db.close();
+}
+
 
 
 QString password::QByteArrayToBinaryString(const QByteArray& byteArray) {
@@ -421,7 +503,7 @@ QByteArray password::decryptData(const QByteArray &encryptedData, const QByteArr
 
 
 // Function to print contents of the Users table
-void printDatabaseContents() {
+void password::printDatabaseContents() {
     QSqlDatabase db = QSqlDatabase::database();
 
     if (!db.open()) {
@@ -454,15 +536,52 @@ void printDatabaseContents() {
 
 
 
+void password::set(QByteArray passwordDB)
+{
+    QImage image(filePath);
+    QByteArray compressedData = passwordDB;
+    QByteArray encryptedCompressedData = encryptData(compressedData, derivedKey);
+    QByteArray combinedData = combineSaltAndEncryptedData(salt, encryptedCompressedData);
+
+    QString binaryString = QByteArrayToBinaryString(combinedData);
+    qDebug() << "Binary String:" << binaryString;
+
+    qDebug() << "data string ::::"<< binaryString;
+    // Embed a message
+    QString message = binaryString;
+    if (lsb.embedMessage(image, message)) {
+        image.save("embedded_image.png");
+        qDebug() << "Message embedded successfully!";
+    } else {
+        qDebug() << "Failed to embed message.";
+    }
+
+}
 
 
 
+QByteArray password::get() {
+    return uncompressedData;
+}
 
 
+void password::kill() {
+    // Reset all member variables to their initial state
+    filePath.clear();
+    masterPassword->clear();
+    salt.clear();
+    derivedKey.clear();
+    value = 0;
 
+    // Close the database if it's open
+    QSqlDatabase db = QSqlDatabase::database();
+    if (db.isOpen()) {
+        db.close();
+    }
 
-
-
+    // Clear the image data, if any (This depends on how your class is structured)
+    // For example: image.reset(); if image was stored as a smart pointer
+}
 
 
 

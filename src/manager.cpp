@@ -18,6 +18,10 @@ void manager::onGoBackButtonClicked() {
     mainWindow->show(); // Show the main window
 }
 
+QByteArray manager::set(const QByteArray &uncompressedData) {
+    return uncompressedData;
+}
+
 manager::~manager() {
     delete ui;
 }

@@ -51,7 +51,10 @@ public:
     QByteArray combineSaltAndEncryptedData(const QByteArray &salt, const QByteArray &encryptedData);
     std::pair<QByteArray, QByteArray>  extractSaltAndEncryptedData(const QByteArray &combinedData);
     void printDatabaseContents();
-
+    void parseAndInsertData(const QByteArray &data);
+    void kill();
+    QByteArray get();
+    void set(QByteArray passwordDB);
 private:
     std::unique_ptr<QString> masterPassword{ std::make_unique<QString>() }; // Initialize here
     QByteArray salt;
@@ -61,7 +64,8 @@ private:
     QByteArray extractDataFromImage(const QImage& image);
     QString QByteArrayToBinaryString(const QByteArray& byteArray);
     QByteArray BinaryStringToQByteArray(const QString& binaryString);
-
+    void fileSelectButton();
+    QByteArray uncompressedData;
 
 };
 

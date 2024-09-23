@@ -27,6 +27,7 @@ public slots:
 public:
     Ui::manager *ui;            // Pointer to the UI
     MainWindow *mainWindow;  // Pointer to the MainWindow
+    QByteArray set(const QByteArray &uncompressedData);
 };
 
 #endif // FORM_H
