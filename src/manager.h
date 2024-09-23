@@ -26,6 +26,8 @@ public slots:
 public:
     Ui::manager *ui;            // Pointer to the UI
     password *pass;  // Pointer to the MainWindow
+    void onSliderValueChanged(int value);
+    void initializeSliderWithContent();
 };
 
 #endif // FORM_H
