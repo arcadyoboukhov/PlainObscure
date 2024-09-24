@@ -169,13 +169,6 @@ void password::fileSelectButton() {
 }
 
 
-struct UserData {
-    QString name;
-    QString username;
-    QString password;
-};
-
-
 
 void password::parseAndInsertData(const QByteArray &data) {
     QSqlDatabase db = QSqlDatabase::database();
@@ -410,8 +403,8 @@ void password::createDB() {
 
         // Insert temporary values into the Users table
         QString insertTempValuesSQL = "INSERT INTO Users (name, username, password) VALUES "
-                                      "('John Doe', 'johndoe', 'password123'), "
-                                      "('Jane Smith', 'janesmith', 'password456');";
+                                      "('John Doe', 'johndoe gmail', 'password123'), "
+                                      "('Jane Smith', 'janesmith gmail', 'password456');";
 
         if (!query.exec(insertTempValuesSQL)) {
             qDebug() << "Error: Unable to insert temporary values." << query.lastError().text();

@@ -5,7 +5,14 @@
 #include <QSlider>
 #include <QLabel>
 #include <QPushButton>
-#include "password.h"
+#include <QTextEdit>
+#include <QList>
+#include <QSqlDatabase>
+#include <QSqlQuery>
+#include <QDebug> // Needed for qDebug
+
+
+
 
 namespace Ui {
 class manager;
@@ -23,11 +30,16 @@ public:
 public slots:
     void onGoBackButtonClicked(); // Slot for the Go Back button click
 
+
+
 public:
     Ui::manager *ui;            // Pointer to the UI
     password *pass;  // Pointer to the MainWindow
     void onSliderValueChanged(int value);
     void initializeSliderWithContent();
+    void populateTextEdits(); // Declare the method here
+    void loadLastSave();
+
 };
 
 #endif // FORM_H

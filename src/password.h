@@ -11,6 +11,16 @@
 #include <QColor>
 #include <iostream>
 #include <QString>
+#include <QSqlDatabase>
+#include <QSqlQuery>
+#include <QDebug>
+
+
+struct UserData {
+    QString name;
+    QString username;
+    QString password;
+};
 
 using namespace std; // Make std's names available
 
@@ -57,6 +67,7 @@ public:
     QByteArray get();
     void set(QByteArray passwordDB);
     manager *managerInstance;
+    QList<UserData> retrieveUserData();
 private:
     std::unique_ptr<QString> masterPassword{ std::make_unique<QString>() }; // Initialize here
     QByteArray salt;

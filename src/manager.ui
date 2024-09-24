@@ -63,7 +63,7 @@
      <item>
       <layout class="QGridLayout" name="gridLayout">
        <item row="6" column="2">
-        <widget class="QTextEdit" name="textEdit_34">
+        <widget class="QTextEdit" name="usernameTextEdit_15">
          <property name="maximumSize">
           <size>
            <width>16777215</width>
@@ -76,7 +76,7 @@
         </widget>
        </item>
        <item row="9" column="1">
-        <widget class="QTextEdit" name="textEdit_11">
+        <widget class="QTextEdit" name="nameTextEdit_3">
          <property name="maximumSize">
           <size>
            <width>16777215</width>
@@ -89,7 +89,7 @@
         </widget>
        </item>
        <item row="16" column="3">
-        <widget class="QTextEdit" name="textEdit_57">
+        <widget class="QTextEdit" name="passwordTextEdit_18">
          <property name="maximumSize">
           <size>
            <width>16777215</width>
@@ -102,7 +102,7 @@
         </widget>
        </item>
        <item row="17" column="2">
-        <widget class="QTextEdit" name="textEdit_54">
+        <widget class="QTextEdit" name="usernameTextEdit_5">
          <property name="maximumSize">
           <size>
            <width>16777215</width>
@@ -115,7 +115,7 @@
         </widget>
        </item>
        <item row="0" column="3">
-        <widget class="QTextEdit" name="textEdit_23">
+        <widget class="QTextEdit" name="passwordTextEdit">
          <property name="maximumSize">
           <size>
            <width>16777215</width>
@@ -128,7 +128,7 @@
         </widget>
        </item>
        <item row="1" column="1">
-        <widget class="QTextEdit" name="textEdit_19">
+        <widget class="QTextEdit" name="nameTextEdit_11">
          <property name="maximumSize">
           <size>
            <width>16777215</width>
@@ -141,7 +141,7 @@
         </widget>
        </item>
        <item row="14" column="1">
-        <widget class="QTextEdit" name="textEdit_6">
+        <widget class="QTextEdit" name="nameTextEdit_15">
          <property name="maximumSize">
           <size>
            <width>16777215</width>
@@ -154,7 +154,7 @@
         </widget>
        </item>
        <item row="4" column="3">
-        <widget class="QTextEdit" name="textEdit_30">
+        <widget class="QTextEdit" name="passwordTextEdit_5">
          <property name="maximumSize">
           <size>
            <width>16777215</width>
@@ -167,7 +167,7 @@
         </widget>
        </item>
        <item row="7" column="3">
-        <widget class="QTextEdit" name="textEdit_35">
+        <widget class="QTextEdit" name="passwordTextEdit_7">
          <property name="maximumSize">
           <size>
            <width>16777215</width>
@@ -180,7 +180,7 @@
         </widget>
        </item>
        <item row="15" column="3">
-        <widget class="QTextEdit" name="textEdit_53">
+        <widget class="QTextEdit" name="passwordTextEdit_16">
          <property name="maximumSize">
           <size>
            <width>16777215</width>
@@ -193,7 +193,7 @@
         </widget>
        </item>
        <item row="2" column="3">
-        <widget class="QTextEdit" name="textEdit_29">
+        <widget class="QTextEdit" name="passwordTextEdit_4">
          <property name="maximumSize">
           <size>
            <width>16777215</width>
@@ -206,7 +206,7 @@
         </widget>
        </item>
        <item row="9" column="2">
-        <widget class="QTextEdit" name="textEdit_40">
+        <widget class="QTextEdit" name="usernameTextEdit_12">
          <property name="maximumSize">
           <size>
            <width>16777215</width>
@@ -219,7 +219,7 @@
         </widget>
        </item>
        <item row="9" column="3">
-        <widget class="QTextEdit" name="textEdit_39">
+        <widget class="QTextEdit" name="passwordTextEdit_9">
          <property name="maximumSize">
           <size>
            <width>16777215</width>
@@ -232,7 +232,7 @@
         </widget>
        </item>
        <item row="6" column="1">
-        <widget class="QTextEdit" name="textEdit_14">
+        <widget class="QTextEdit" name="nameTextEdit_6">
          <property name="maximumSize">
           <size>
            <width>16777215</width>
@@ -245,7 +245,7 @@
         </widget>
        </item>
        <item row="2" column="2">
-        <widget class="QTextEdit" name="textEdit_27">
+        <widget class="QTextEdit" name="usernameTextEdit_18">
          <property name="maximumSize">
           <size>
            <width>16777215</width>
@@ -258,7 +258,7 @@
         </widget>
        </item>
        <item row="7" column="2">
-        <widget class="QTextEdit" name="textEdit_37">
+        <widget class="QTextEdit" name="usernameTextEdit_14">
          <property name="maximumSize">
           <size>
            <width>16777215</width>
@@ -271,7 +271,7 @@
         </widget>
        </item>
        <item row="8" column="1">
-        <widget class="QTextEdit" name="textEdit_12">
+        <widget class="QTextEdit" name="nameTextEdit_4">
          <property name="maximumSize">
           <size>
            <width>16777215</width>
@@ -284,7 +284,7 @@
         </widget>
        </item>
        <item row="10" column="1">
-        <widget class="QTextEdit" name="textEdit_10">
+        <widget class="QTextEdit" name="nameTextEdit_2">
          <property name="maximumSize">
           <size>
            <width>16777215</width>
@@ -297,7 +297,7 @@
         </widget>
        </item>
        <item row="14" column="2">
-        <widget class="QTextEdit" name="textEdit_52">
+        <widget class="QTextEdit" name="usernameTextEdit_6">
          <property name="maximumSize">
           <size>
            <width>16777215</width>
@@ -310,7 +310,7 @@
         </widget>
        </item>
        <item row="17" column="1">
-        <widget class="QTextEdit" name="textEdit_3">
+        <widget class="QTextEdit" name="nameTextEdit_12">
          <property name="maximumSize">
           <size>
            <width>16777215</width>
@@ -323,7 +323,7 @@
         </widget>
        </item>
        <item row="10" column="2">
-        <widget class="QTextEdit" name="textEdit_45">
+        <widget class="QTextEdit" name="usernameTextEdit_10">
          <property name="maximumSize">
           <size>
            <width>16777215</width>
@@ -336,7 +336,7 @@
         </widget>
        </item>
        <item row="12" column="1">
-        <widget class="QTextEdit" name="textEdit_8">
+        <widget class="QTextEdit" name="nameTextEdit_17">
          <property name="maximumSize">
           <size>
            <width>16777215</width>
@@ -349,7 +349,7 @@
         </widget>
        </item>
        <item row="4" column="2">
-        <widget class="QTextEdit" name="textEdit_33">
+        <widget class="QTextEdit" name="usernameTextEdit_16">
          <property name="maximumSize">
           <size>
            <width>16777215</width>
@@ -362,7 +362,7 @@
         </widget>
        </item>
        <item row="5" column="1">
-        <widget class="QTextEdit" name="textEdit_15">
+        <widget class="QTextEdit" name="nameTextEdit_7">
          <property name="maximumSize">
           <size>
            <width>16777215</width>
@@ -375,7 +375,7 @@
         </widget>
        </item>
        <item row="6" column="3">
-        <widget class="QTextEdit" name="textEdit_36">
+        <widget class="QTextEdit" name="passwordTextEdit_8">
          <property name="maximumSize">
           <size>
            <width>16777215</width>
@@ -388,7 +388,7 @@
         </widget>
        </item>
        <item row="17" column="3">
-        <widget class="QTextEdit" name="textEdit_55">
+        <widget class="QTextEdit" name="passwordTextEdit_17">
          <property name="maximumSize">
           <size>
            <width>16777215</width>
@@ -401,7 +401,7 @@
         </widget>
        </item>
        <item row="15" column="2">
-        <widget class="QTextEdit" name="textEdit_51">
+        <widget class="QTextEdit" name="usernameTextEdit_7">
          <property name="maximumSize">
           <size>
            <width>16777215</width>
@@ -414,7 +414,7 @@
         </widget>
        </item>
        <item row="1" column="3">
-        <widget class="QTextEdit" name="textEdit_25">
+        <widget class="QTextEdit" name="passwordTextEdit_2">
          <property name="maximumSize">
           <size>
            <width>16777215</width>
@@ -427,7 +427,7 @@
         </widget>
        </item>
        <item row="11" column="2">
-        <widget class="QTextEdit" name="textEdit_43">
+        <widget class="QTextEdit" name="usernameTextEdit_11">
          <property name="maximumSize">
           <size>
            <width>16777215</width>
@@ -440,7 +440,7 @@
         </widget>
        </item>
        <item row="13" column="2">
-        <widget class="QTextEdit" name="textEdit_48">
+        <widget class="QTextEdit" name="usernameTextEdit_8">
          <property name="maximumSize">
           <size>
            <width>16777215</width>
@@ -453,7 +453,7 @@
         </widget>
        </item>
        <item row="8" column="2">
-        <widget class="QTextEdit" name="textEdit_38">
+        <widget class="QTextEdit" name="usernameTextEdit_13">
          <property name="maximumSize">
           <size>
            <width>16777215</width>
@@ -466,7 +466,7 @@
         </widget>
        </item>
        <item row="2" column="1">
-        <widget class="QTextEdit" name="textEdit_18">
+        <widget class="QTextEdit" name="nameTextEdit_10">
          <property name="maximumSize">
           <size>
            <width>16777215</width>
@@ -479,7 +479,7 @@
         </widget>
        </item>
        <item row="0" column="2">
-        <widget class="QTextEdit" name="textEdit_22">
+        <widget class="QTextEdit" name="usernameTextEdit">
          <property name="maximumSize">
           <size>
            <width>16777215</width>
@@ -492,7 +492,7 @@
         </widget>
        </item>
        <item row="3" column="1">
-        <widget class="QTextEdit" name="textEdit_16">
+        <widget class="QTextEdit" name="nameTextEdit_8">
          <property name="maximumSize">
           <size>
            <width>16777215</width>
@@ -505,7 +505,7 @@
         </widget>
        </item>
        <item row="5" column="3">
-        <widget class="QTextEdit" name="textEdit_32">
+        <widget class="QTextEdit" name="passwordTextEdit_6">
          <property name="maximumSize">
           <size>
            <width>16777215</width>
@@ -518,7 +518,7 @@
         </widget>
        </item>
        <item row="13" column="1">
-        <widget class="QTextEdit" name="textEdit_7">
+        <widget class="QTextEdit" name="nameTextEdit_16">
          <property name="maximumSize">
           <size>
            <width>16777215</width>
@@ -531,7 +531,7 @@
         </widget>
        </item>
        <item row="13" column="3">
-        <widget class="QTextEdit" name="textEdit_46">
+        <widget class="QTextEdit" name="passwordTextEdit_13">
          <property name="maximumSize">
           <size>
            <width>16777215</width>
@@ -544,7 +544,7 @@
         </widget>
        </item>
        <item row="4" column="1">
-        <widget class="QTextEdit" name="textEdit_17">
+        <widget class="QTextEdit" name="nameTextEdit_9">
          <property name="maximumSize">
           <size>
            <width>16777215</width>
@@ -557,7 +557,7 @@
         </widget>
        </item>
        <item row="3" column="3">
-        <widget class="QTextEdit" name="textEdit_28">
+        <widget class="QTextEdit" name="passwordTextEdit_3">
          <property name="maximumSize">
           <size>
            <width>16777215</width>
@@ -570,7 +570,7 @@
         </widget>
        </item>
        <item row="8" column="3">
-        <widget class="QTextEdit" name="textEdit_41">
+        <widget class="QTextEdit" name="passwordTextEdit_10">
          <property name="maximumSize">
           <size>
            <width>16777215</width>
@@ -583,7 +583,7 @@
         </widget>
        </item>
        <item row="14" column="3">
-        <widget class="QTextEdit" name="textEdit_50">
+        <widget class="QTextEdit" name="passwordTextEdit_15">
          <property name="maximumSize">
           <size>
            <width>16777215</width>
@@ -596,7 +596,7 @@
         </widget>
        </item>
        <item row="0" column="1">
-        <widget class="QTextEdit" name="textEdit_20">
+        <widget class="QTextEdit" name="nameTextEdit">
          <property name="maximumSize">
           <size>
            <width>16777215</width>
@@ -609,7 +609,7 @@
         </widget>
        </item>
        <item row="3" column="2">
-        <widget class="QTextEdit" name="textEdit_26">
+        <widget class="QTextEdit" name="usernameTextEdit_3">
          <property name="maximumSize">
           <size>
            <width>16777215</width>
@@ -622,7 +622,7 @@
         </widget>
        </item>
        <item row="10" column="3">
-        <widget class="QTextEdit" name="textEdit_44">
+        <widget class="QTextEdit" name="passwordTextEdit_12">
          <property name="maximumSize">
           <size>
            <width>16777215</width>
@@ -635,7 +635,7 @@
         </widget>
        </item>
        <item row="11" column="3">
-        <widget class="QTextEdit" name="textEdit_42">
+        <widget class="QTextEdit" name="passwordTextEdit_11">
          <property name="maximumSize">
           <size>
            <width>16777215</width>
@@ -648,7 +648,7 @@
         </widget>
        </item>
        <item row="12" column="2">
-        <widget class="QTextEdit" name="textEdit_47">
+        <widget class="QTextEdit" name="usernameTextEdit_9">
          <property name="maximumSize">
           <size>
            <width>16777215</width>
@@ -661,7 +661,7 @@
         </widget>
        </item>
        <item row="16" column="1">
-        <widget class="QTextEdit" name="textEdit_4">
+        <widget class="QTextEdit" name="nameTextEdit_13">
          <property name="maximumSize">
           <size>
            <width>16777215</width>
@@ -674,7 +674,7 @@
         </widget>
        </item>
        <item row="16" column="2">
-        <widget class="QTextEdit" name="textEdit_56">
+        <widget class="QTextEdit" name="usernameTextEdit_4">
          <property name="maximumSize">
           <size>
            <width>16777215</width>
@@ -687,7 +687,7 @@
         </widget>
        </item>
        <item row="12" column="3">
-        <widget class="QTextEdit" name="textEdit_49">
+        <widget class="QTextEdit" name="passwordTextEdit_14">
          <property name="maximumSize">
           <size>
            <width>16777215</width>
@@ -700,7 +700,7 @@
         </widget>
        </item>
        <item row="15" column="1">
-        <widget class="QTextEdit" name="textEdit_5">
+        <widget class="QTextEdit" name="nameTextEdit_14">
          <property name="maximumSize">
           <size>
            <width>16777215</width>
@@ -713,7 +713,7 @@
         </widget>
        </item>
        <item row="1" column="2">
-        <widget class="QTextEdit" name="textEdit_24">
+        <widget class="QTextEdit" name="usernameTextEdit_2">
          <property name="maximumSize">
           <size>
            <width>16777215</width>
@@ -726,7 +726,7 @@
         </widget>
        </item>
        <item row="7" column="1">
-        <widget class="QTextEdit" name="textEdit_13">
+        <widget class="QTextEdit" name="nameTextEdit_5">
          <property name="maximumSize">
           <size>
            <width>16777215</width>
@@ -739,7 +739,7 @@
         </widget>
        </item>
        <item row="5" column="2">
-        <widget class="QTextEdit" name="textEdit_31">
+        <widget class="QTextEdit" name="usernameTextEdit_17">
          <property name="maximumSize">
           <size>
            <width>16777215</width>
@@ -752,7 +752,7 @@
         </widget>
        </item>
        <item row="11" column="1">
-        <widget class="QTextEdit" name="textEdit_9">
+        <widget class="QTextEdit" name="nameTextEdit_18">
          <property name="maximumSize">
           <size>
            <width>16777215</width>
