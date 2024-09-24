@@ -13,7 +13,7 @@ PlainObscure is a program that creates, views, and manages password databases. T
 
 ## Demo
 
-![Demo](https://github.com/arcadyoboukhov/VideoExcess/blob/main/Screenshot%202024-09-21%20203716.png)
+![Demo](https://github.com/arcadyoboukhov/PlainObscure/blob/main/assets/Screenshot%202024-09-24%20074757.png)
 
 
 ## Technologies Used
