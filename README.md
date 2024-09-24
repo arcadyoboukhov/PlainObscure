@@ -18,7 +18,7 @@ PlainObscure is a program that creates, views, and manages password databases. T
 
 ## Technologies Used
 
-- **library used:** nlohmann (for json creation)   
+- **library used:** crypto, internal, opencv2, openssl  
 - **Programming Languages:** C++, Cmake
 - **Software used:** QT Creator, QT Designer
 
