@@ -32,7 +32,7 @@
 
 
 // Or specific modules
-#include "C:\opencv\build\include\opencv2/core.hpp"
+#include <opencv2/core.hpp>
 #include <opencv2/highgui.hpp>
 #include <opencv2/imgproc.hpp>
 #include "manager.h"
