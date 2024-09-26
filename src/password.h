@@ -91,6 +91,8 @@ public:
     static int value;                 // Static declarations
     QJsonObject extractDataFromJson(const QByteArray &jsonData);
     QJsonDocument jsonDocument;
+    void save(QString formattedJson);
+    QByteArray removeEmbeddedData(const QString &imagePath);
 
 };
 

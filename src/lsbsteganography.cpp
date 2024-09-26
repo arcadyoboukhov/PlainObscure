@@ -25,6 +25,26 @@ bool LSBSteganography::embedMessage(QImage &image, const QString &message) {
     return true;
 }
 
+void LSBSteganography::clearMessage(QImage &image) {
+    int width = image.width();
+    int height = image.height();
+
+    // Iterate through each pixel
+    for (int y = 0; y < height; ++y) {
+        for (int x = 0; x < width; ++x) {
+            QColor color = image.pixelColor(x, y);
+            int r = color.red() & ~1;  // Clear the LSB of the red channel
+            int g = color.green() & ~1; // Clear the LSB of the green channel
+            int b = color.blue() & ~1;  // Clear the LSB of the blue channel
+            color.setRed(r);
+            color.setGreen(g);
+            color.setBlue(b);
+            image.setPixelColor(x, y, color);  // Set the updated color
+        }
+    }
+}
+
+
 QString LSBSteganography::extractMessage(const QImage &image) {
     QByteArray bytes;
     int x = 0, y = 0;

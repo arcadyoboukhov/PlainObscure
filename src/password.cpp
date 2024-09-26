@@ -434,6 +434,66 @@ QByteArray password::decryptData(const QByteArray &encryptedData, const QByteArr
 }
 
 
+void password::save(QString formattedJson) {
+    QImage image(filePath);
+
+    // Step 1: Extract existing data
+    QString extractedMessage = lsb.extractMessage(image);
+    QByteArray reconstructedData = BinaryStringToQByteArray(extractedMessage);
+
+    // Check that we can extract the data properly
+    if (reconstructedData.isEmpty()) {
+        qWarning() << "No existing data found in the image. Will create a new entry.";
+    }
+
+    // Step 2: Extract salt and encrypted data if there's existing data
+    QByteArray existingSalt, existingEncryptedData;
+    if (!reconstructedData.isEmpty()) {
+        auto result = extractSaltAndEncryptedData(reconstructedData);
+        existingSalt = result.first;
+        existingEncryptedData = result.second;
+    }
+
+    // Step 3: Combine new data with existing data
+    // Here you want to load the existing JSON data
+    QJsonDocument existingDoc = QJsonDocument::fromJson(existingEncryptedData); // Assuming previous data is stored as such
+    QJsonArray existingArray = existingDoc.isArray() ? existingDoc.array() : QJsonArray();
+
+    // Step 4: Create a new JSON object from the formatted input
+    QJsonDocument newDoc = QJsonDocument::fromJson(formattedJson.toUtf8());
+    if (newDoc.isArray()) {
+        QJsonArray newArray = newDoc.array();
+
+        // Merge arrays (existing and new)
+        for (const QJsonValue &value : newArray) {
+            existingArray.append(value);
+        }
+    }
+
+    // Step 5: Serialize the combined JSON array back to a QByteArray
+    QByteArray combinedJsonData = QJsonDocument(existingArray).toJson(QJsonDocument::Compact);
+
+    // Step 6: Compress and encrypt the new combined JSON data
+    QByteArray compressedData = compressData(combinedJsonData); // Compress the new combined data
+    QByteArray encryptedCompressedData = encryptData(compressedData, derivedKey);
+
+    // Step 7: Combine the salt (if existing) and the new encrypted data
+    QByteArray combinedData = combineSaltAndEncryptedData(existingSalt.isEmpty() ? generateRandomSalt(32) : existingSalt,
+                                                          encryptedCompressedData);
+
+    // Step 8: Convert combined data to binary string and embed
+    QString binaryString = QByteArrayToBinaryString(combinedData);
+    if (lsb.embedMessage(image, binaryString)) {
+        image.save("updated_embedded_image.png"); // Save with a new name or overwrite if needed
+        qDebug() << "Updated embedded message successfully!";
+    } else {
+        qDebug() << "Failed to update embedded message.";
+    }
+}
+
+
+
+
 
 
 

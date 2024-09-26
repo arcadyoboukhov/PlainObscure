@@ -19,10 +19,51 @@ manager::manager(password *pass, QWidget *parent)
     ui->setupUi(this);
 
     connect(ui->goBackButton, &QPushButton::clicked, this, &manager::onGoBackButtonClicked);
-    // connect(ui->pushButton_2, &QPushButton::clicked, this, &manager::saveData);
+    connect(ui->pushButton_2, &QPushButton::clicked, this, &manager::saveData);
     connect(ui->pushButton_3, &QPushButton::clicked, this, &manager::loadLastSave);
 
 }
+
+
+void manager::saveData() {
+    QJsonArray jsonArray;
+
+    // Loop through the indices to gather data from 1 through 18
+    for (int i = 0; i < 18; ++i) {
+        QString nameEditName = QString("nameTextEdit_%1").arg(i + 1);
+        QString usernameEditName = QString("usernameTextEdit_%1").arg(i + 1);
+        QString passwordEditName = QString("passwordTextEdit_%1").arg(i + 1);
+
+        // Find the QLineEdit pointers
+        QLineEdit *nameEdit = this->findChild<QLineEdit*>(nameEditName);
+        QLineEdit *usernameEdit = this->findChild<QLineEdit*>(usernameEditName);
+        QLineEdit *passwordEdit = this->findChild<QLineEdit*>(passwordEditName);
+
+        if (nameEdit && usernameEdit && passwordEdit) {
+            QJsonObject jsonObj;
+            jsonObj["name"] = nameEdit->text();
+            jsonObj["username"] = usernameEdit->text();
+            jsonObj["password"] = passwordEdit->text();
+            jsonArray.append(jsonObj);
+        } else {
+            qDebug() << "Some QLineEdit not found for index:" << (i + 1);
+        }
+    }
+
+    QJsonDocument jsonDoc(jsonArray);
+    QByteArray jsonData = jsonDoc.toJson(QJsonDocument::Compact); // Compact format
+
+    // Remove the unnecessary formatting
+    QString formattedJson = QString::fromUtf8(jsonData);
+
+    qDebug() << "Formatted JSON data:" << formattedJson;
+
+    // Pass the JSON string to the password class for saving
+    pass->save(formattedJson); // Assuming you have a save function to handle storing this
+}
+
+
+
 
 void manager::loadLastSave() {
     // Call the method in the password class to get the last saved data

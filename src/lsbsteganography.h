@@ -14,6 +14,7 @@ public:
 
     // Extracts the message from the image
     QString extractMessage(const QImage &image);
+    void clearMessage(QImage &image);
 
 private:
     void embedByte(QImage &image, int &x, int &y, char byte);

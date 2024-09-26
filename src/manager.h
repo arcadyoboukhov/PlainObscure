@@ -36,6 +36,7 @@ public:
     Ui::manager *ui;            // Pointer to the UI
     password *pass;  // Pointer to the MainWindow
     void loadLastSave();
+    void saveData();
 
 
 };
