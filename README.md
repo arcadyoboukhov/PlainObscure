@@ -36,3 +36,4 @@ Follow the steps below to install the project locally.
 
 3. Select the folder of the project: Select all the files in the project. Run the program in QT Creator. 
  
+IT SAVES IMAGES UNDER BUILD!!!
