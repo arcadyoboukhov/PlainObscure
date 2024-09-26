@@ -4,6 +4,11 @@
 #include <QSqlDatabase>
 #include <QSqlQuery>
 #include <QDebug>
+#include <QApplication>
+#include <QFileDialog>
+#include <QWidget>
+#include <QString>
+#include <QLineEdit>
 
 // Constructor for the Form class
 manager::manager(password *pass, QWidget *parent)
@@ -14,142 +19,68 @@ manager::manager(password *pass, QWidget *parent)
     ui->setupUi(this);
 
     connect(ui->goBackButton, &QPushButton::clicked, this, &manager::onGoBackButtonClicked);
-    connect(ui->verticalSlider, &QSlider::valueChanged, this, &manager::onSliderValueChanged);
+    // connect(ui->pushButton_2, &QPushButton::clicked, this, &manager::saveData);
     connect(ui->pushButton_3, &QPushButton::clicked, this, &manager::loadLastSave);
 
 }
 
 void manager::loadLastSave() {
-    QByteArray sqlData = pass ? pass->get() : QByteArray(); // Check pass
-    if (pass) {
-        pass->parseAndInsertData(sqlData);
-    } else {
-        qDebug() << "pass is null!";
-        return; // Early exit if pass is null
+    // Call the method in the password class to get the last saved data
+    QByteArray jsonData = pass->get();
+
+    // Parse the JSON data
+    QJsonDocument jsonDoc = QJsonDocument::fromJson(jsonData);
+    if (jsonDoc.isNull() || !jsonDoc.isArray()) {
+        qDebug() << "Failed to parse JSON data or not an array.";
+        return; // Optionally show an error message to the user here
     }
 
-    initializeSliderWithContent();
-    populateTextEdits();
-}
+    QJsonArray jsonArray = jsonDoc.array();
 
+    // Ensure not overriding more UI elements than available
+    for (int i = 0; i < jsonArray.size() && i < 18; ++i) {
+        QJsonObject jsonObj = jsonArray[i].toObject();
 
-// Function to initialize the slider's range based on the QTextEdit's contents
-void manager::initializeSliderWithContent() {
-    QList<QTextEdit*> textEdits = findChildren<QTextEdit*>();
-    if (!textEdits.isEmpty()) {
-        QTextEdit* textEdit = textEdits.first();
-        int maximumScroll = textEdit->verticalScrollBar()->maximum();
+        // Extract values from the JSON object
+        QString name = jsonObj["name"].toString();
+        QString username = jsonObj["username"].toString();
+        QString password = jsonObj["password"].toString();
 
-        ui->verticalSlider->setRange(0, maximumScroll);
+        // Set the names of the QLineEdit objects properly
+        QString nameEditName = QString("nameTextEdit_%1").arg(i + 1);
+        QString usernameEditName = QString("usernameTextEdit_%1").arg(i + 1);
+        QString passwordEditName = QString("passwordTextEdit_%1").arg(i + 1);
 
-        // Initialize the position of the slider to the top
-        ui->verticalSlider->setValue(0);
-    }
-}
-QList<UserData> password::retrieveUserData() {
-    QList<UserData> users;
-    QSqlDatabase db = QSqlDatabase::database();
+        // Find the QLineEdit pointers
+        QLineEdit *nameEdit = this->findChild<QLineEdit*>(nameEditName);
+        QLineEdit *usernameEdit = this->findChild<QLineEdit*>(usernameEditName);
+        QLineEdit *passwordEdit = this->findChild<QLineEdit*>(passwordEditName);
 
-    if (!db.open()) {
-        qDebug() << "Error: Unable to open database.";
-        return users;
-    }
-
-    QSqlQuery query("SELECT name, username, password FROM Users");
-    while (query.next()) {
-        QString name = query.value(0).toString();
-        QString username = query.value(1).toString();
-        QString password = query.value(2).toString();
-
-        users.append({name, username, password});
-    }
-
-    db.close();
-    return users; // Return the list of users
-}
-
-
-
-
-
-void manager::populateTextEdits() {
-    // Clear previous text edits
-    QList<QTextEdit*> nameTextEdits;
-    QList<QTextEdit*> usernameTextEdits;
-    QList<QTextEdit*> passwordTextEdits;
-
-    // Retrieve user data
-    QList<UserData> users = pass ? pass->retrieveUserData() : QList<UserData>();
-
-    // Add debug output
-    qDebug() << "Found text edits:";
-    qDebug() << "Total Users:" << users.size();
-
-    // Loop through user data and find corresponding text edits
-    for (int i = 0; i < users.size(); ++i) {
-        // Construct the name of the text edits based on the index
-        QString nameEditName = QString("nameTextEdit_%1").arg(i);
-        QString usernameEditName = QString("usernameTextEdit_%1").arg(i);
-        QString passwordEditName = QString("passwordTextEdit_%1").arg(i);
-
-        // Find text edits by constructed names
-        QTextEdit* nameTextEdit = findChild<QTextEdit*>(nameEditName);
-        QTextEdit* usernameTextEdit = findChild<QTextEdit*>(usernameEditName);
-        QTextEdit* passwordTextEdit = findChild<QTextEdit*>(passwordEditName);
-
-        // Populate text edits if they are found
-        if (nameTextEdit) {
-            nameTextEdit->clear();
-            nameTextEdit->append(users[i].name);
+        // Set the text fields if they are not null
+        if (nameEdit) {
+            nameEdit->setText(name);
+        } else {
+            qDebug() << "Name edit not found:" << nameEditName;
         }
-        if (usernameTextEdit) {
-            usernameTextEdit->clear();
-            usernameTextEdit->append(users[i].username);
+        if (usernameEdit) {
+            usernameEdit->setText(username);
+        } else {
+            qDebug() << "Username edit not found:" << usernameEditName;
         }
-        if (passwordTextEdit) {
-            passwordTextEdit->clear();
-            passwordTextEdit->append(users[i].password);
+        if (passwordEdit) {
+            passwordEdit->setText(password);
+        } else {
+            qDebug() << "Password edit not found:" << passwordEditName;
         }
-    }
-
-    // Ensure that scrollbars are updated correctly after text is loaded
-    for (int i = 0; i < users.size(); ++i) {
-        QString nameEditName = QString("nameTextEdit_%1").arg(i);
-        QString usernameEditName = QString("usernameTextEdit_%1").arg(i);
-        QString passwordEditName = QString("passwordTextEdit_%1").arg(i);
-
-        QTextEdit* nameTextEdit = findChild<QTextEdit*>(nameEditName);
-        QTextEdit* usernameTextEdit = findChild<QTextEdit*>(usernameEditName);
-        QTextEdit* passwordTextEdit = findChild<QTextEdit*>(passwordEditName);
-
-        if (nameTextEdit) {
-            nameTextEdit->verticalScrollBar()->setValue(nameTextEdit->verticalScrollBar()->maximum());
-        }
-        if (usernameTextEdit) {
-            usernameTextEdit->verticalScrollBar()->setValue(usernameTextEdit->verticalScrollBar()->maximum());
-        }
-        if (passwordTextEdit) {
-            passwordTextEdit->verticalScrollBar()->setValue(passwordTextEdit->verticalScrollBar()->maximum());
-        }
-    }
-
-    // Debugging output if no user data is found
-    if (users.isEmpty()) {
-        qDebug() << "No user data found.";
     }
 }
 
 
 
 
-// Slot for when the slider value changes
-void manager::onSliderValueChanged(int value) {
-    QList<QTextEdit*> textEdits = findChildren<QTextEdit*>();
-    for (QTextEdit* textEdit : textEdits) {
-        // Set the scroll value of the QTextEdit
-        textEdit->verticalScrollBar()->setValue(value);
-    }
-}
+
+
+
 
 // On back button clicked
 void manager::onGoBackButtonClicked() {

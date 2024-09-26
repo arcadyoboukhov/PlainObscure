@@ -14,6 +14,10 @@
 #include <QSqlDatabase>
 #include <QSqlQuery>
 #include <QDebug>
+#include "lsbsteganography.h"
+#include <QJsonObject>
+#include <QJsonArray>
+#include <QJsonDocument> // Make sure to include this at the top
 
 
 struct UserData {
@@ -47,11 +51,13 @@ public slots:
     QByteArray encryptData(const QByteArray &data, const QByteArray &key);  // Declare encryptData method
     void createDB();
     QByteArray uncompressData(const QByteArray &compressedData);
-    QByteArray getDataFromDB();
     QByteArray decryptData(const QByteArray &encryptedData, const QByteArray &key);
+
+
 public:
     Ui::password *ui;            // Pointer to the UI
     MainWindow *mainWindow;  // Pointer to the MainWindow
+    manager *managerInstance;
 
     // Method declarations
     QByteArray deriveKeyFromPassword(const QString &password, const QByteArray &salt, int iterations = 1000000, int keyLength = 32);
@@ -60,18 +66,14 @@ public:
     // Declare the pbkdf2_hmac_sha256 method
     QByteArray pbkdf2_hmac_sha256(const QByteArray &password, const QByteArray &salt, int iterations, int keyLength);
     QByteArray combineSaltAndEncryptedData(const QByteArray &salt, const QByteArray &encryptedData);
-    std::pair<QByteArray, QByteArray>  extractSaltAndEncryptedData(const QByteArray &combinedData);
+    std::pair<QByteArray, QByteArray> extractSaltAndEncryptedData(const QByteArray &combinedData);
     void printDatabaseContents();
     void parseAndInsertData(const QByteArray &data);
     void kill();
     QByteArray get();
     void set(QByteArray passwordDB);
-    manager *managerInstance;
     QList<UserData> retrieveUserData();
-private:
-    std::unique_ptr<QString> masterPassword{ std::make_unique<QString>() }; // Initialize here
-    QByteArray salt;
-    QByteArray derivedKey;
+
     // Declare the function here
     QImage embedDataInImage(const QImage& image, const QByteArray& data);
     QByteArray extractDataFromImage(const QImage& image);
@@ -79,6 +81,16 @@ private:
     QByteArray BinaryStringToQByteArray(const QString& binaryString);
     void fileSelectButton();
     QByteArray uncompressedData;
+    QString getFilePath();  // Add this line
+    LSBSteganography getLsb(); // Assuming LSBSteganography is a class you've defined
+    // Declare external variables
+    static QString filePath; // Change this from static to instance variable          // Define it as static
+    static std::unique_ptr<QString> masterPassword; // Make unique_ptr static
+    static QByteArray salt;           // Static declarations
+    static QByteArray derivedKey;     // Static declarations
+    static int value;                 // Static declarations
+    QJsonObject extractDataFromJson(const QByteArray &jsonData);
+    QJsonDocument jsonDocument;
 
 };
 

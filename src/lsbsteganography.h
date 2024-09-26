@@ -18,6 +18,7 @@ public:
 private:
     void embedByte(QImage &image, int &x, int &y, char byte);
     char extractByte(const QImage &image, int &x, int &y);
+
 };
 
 #endif // LSBSTEGANOGRAPHY_H

@@ -62,580 +62,8 @@
      </item>
      <item>
       <layout class="QGridLayout" name="gridLayout">
-       <item row="6" column="2">
-        <widget class="QTextEdit" name="usernameTextEdit_15">
-         <property name="maximumSize">
-          <size>
-           <width>16777215</width>
-           <height>20</height>
-          </size>
-         </property>
-         <property name="styleSheet">
-          <string>background-color: black; color: green; font-family: 'Courier New'; border: 1px solid green;</string>
-         </property>
-        </widget>
-       </item>
-       <item row="9" column="1">
-        <widget class="QTextEdit" name="nameTextEdit_3">
-         <property name="maximumSize">
-          <size>
-           <width>16777215</width>
-           <height>20</height>
-          </size>
-         </property>
-         <property name="styleSheet">
-          <string>background-color: black; color: green; font-family: 'Courier New'; border: 1px solid green;</string>
-         </property>
-        </widget>
-       </item>
-       <item row="16" column="3">
-        <widget class="QTextEdit" name="passwordTextEdit_18">
-         <property name="maximumSize">
-          <size>
-           <width>16777215</width>
-           <height>20</height>
-          </size>
-         </property>
-         <property name="styleSheet">
-          <string>background-color: black; color: green; font-family: 'Courier New'; border: 1px solid green;</string>
-         </property>
-        </widget>
-       </item>
-       <item row="17" column="2">
-        <widget class="QTextEdit" name="usernameTextEdit_5">
-         <property name="maximumSize">
-          <size>
-           <width>16777215</width>
-           <height>20</height>
-          </size>
-         </property>
-         <property name="styleSheet">
-          <string>background-color: black; color: green; font-family: 'Courier New'; border: 1px solid green;</string>
-         </property>
-        </widget>
-       </item>
-       <item row="0" column="3">
-        <widget class="QTextEdit" name="passwordTextEdit">
-         <property name="maximumSize">
-          <size>
-           <width>16777215</width>
-           <height>20</height>
-          </size>
-         </property>
-         <property name="styleSheet">
-          <string>background-color: black; color: green; font-family: 'Courier New'; border: 1px solid green;</string>
-         </property>
-        </widget>
-       </item>
-       <item row="1" column="1">
-        <widget class="QTextEdit" name="nameTextEdit_11">
-         <property name="maximumSize">
-          <size>
-           <width>16777215</width>
-           <height>20</height>
-          </size>
-         </property>
-         <property name="styleSheet">
-          <string>background-color: black; color: green; font-family: 'Courier New'; border: 1px solid green;</string>
-         </property>
-        </widget>
-       </item>
-       <item row="14" column="1">
-        <widget class="QTextEdit" name="nameTextEdit_15">
-         <property name="maximumSize">
-          <size>
-           <width>16777215</width>
-           <height>20</height>
-          </size>
-         </property>
-         <property name="styleSheet">
-          <string>background-color: black; color: green; font-family: 'Courier New'; border: 1px solid green;</string>
-         </property>
-        </widget>
-       </item>
-       <item row="4" column="3">
-        <widget class="QTextEdit" name="passwordTextEdit_5">
-         <property name="maximumSize">
-          <size>
-           <width>16777215</width>
-           <height>20</height>
-          </size>
-         </property>
-         <property name="styleSheet">
-          <string>background-color: black; color: green; font-family: 'Courier New'; border: 1px solid green;</string>
-         </property>
-        </widget>
-       </item>
-       <item row="7" column="3">
-        <widget class="QTextEdit" name="passwordTextEdit_7">
-         <property name="maximumSize">
-          <size>
-           <width>16777215</width>
-           <height>20</height>
-          </size>
-         </property>
-         <property name="styleSheet">
-          <string>background-color: black; color: green; font-family: 'Courier New'; border: 1px solid green;</string>
-         </property>
-        </widget>
-       </item>
-       <item row="15" column="3">
-        <widget class="QTextEdit" name="passwordTextEdit_16">
-         <property name="maximumSize">
-          <size>
-           <width>16777215</width>
-           <height>20</height>
-          </size>
-         </property>
-         <property name="styleSheet">
-          <string>background-color: black; color: green; font-family: 'Courier New'; border: 1px solid green;</string>
-         </property>
-        </widget>
-       </item>
-       <item row="2" column="3">
-        <widget class="QTextEdit" name="passwordTextEdit_4">
-         <property name="maximumSize">
-          <size>
-           <width>16777215</width>
-           <height>20</height>
-          </size>
-         </property>
-         <property name="styleSheet">
-          <string>background-color: black; color: green; font-family: 'Courier New'; border: 1px solid green;</string>
-         </property>
-        </widget>
-       </item>
-       <item row="9" column="2">
-        <widget class="QTextEdit" name="usernameTextEdit_12">
-         <property name="maximumSize">
-          <size>
-           <width>16777215</width>
-           <height>20</height>
-          </size>
-         </property>
-         <property name="styleSheet">
-          <string>background-color: black; color: green; font-family: 'Courier New'; border: 1px solid green;</string>
-         </property>
-        </widget>
-       </item>
-       <item row="9" column="3">
-        <widget class="QTextEdit" name="passwordTextEdit_9">
-         <property name="maximumSize">
-          <size>
-           <width>16777215</width>
-           <height>20</height>
-          </size>
-         </property>
-         <property name="styleSheet">
-          <string>background-color: black; color: green; font-family: 'Courier New'; border: 1px solid green;</string>
-         </property>
-        </widget>
-       </item>
-       <item row="6" column="1">
-        <widget class="QTextEdit" name="nameTextEdit_6">
-         <property name="maximumSize">
-          <size>
-           <width>16777215</width>
-           <height>20</height>
-          </size>
-         </property>
-         <property name="styleSheet">
-          <string>background-color: black; color: green; font-family: 'Courier New'; border: 1px solid green;</string>
-         </property>
-        </widget>
-       </item>
-       <item row="2" column="2">
-        <widget class="QTextEdit" name="usernameTextEdit_18">
-         <property name="maximumSize">
-          <size>
-           <width>16777215</width>
-           <height>20</height>
-          </size>
-         </property>
-         <property name="styleSheet">
-          <string>background-color: black; color: green; font-family: 'Courier New'; border: 1px solid green;</string>
-         </property>
-        </widget>
-       </item>
-       <item row="7" column="2">
-        <widget class="QTextEdit" name="usernameTextEdit_14">
-         <property name="maximumSize">
-          <size>
-           <width>16777215</width>
-           <height>20</height>
-          </size>
-         </property>
-         <property name="styleSheet">
-          <string>background-color: black; color: green; font-family: 'Courier New'; border: 1px solid green;</string>
-         </property>
-        </widget>
-       </item>
-       <item row="8" column="1">
-        <widget class="QTextEdit" name="nameTextEdit_4">
-         <property name="maximumSize">
-          <size>
-           <width>16777215</width>
-           <height>20</height>
-          </size>
-         </property>
-         <property name="styleSheet">
-          <string>background-color: black; color: green; font-family: 'Courier New'; border: 1px solid green;</string>
-         </property>
-        </widget>
-       </item>
-       <item row="10" column="1">
-        <widget class="QTextEdit" name="nameTextEdit_2">
-         <property name="maximumSize">
-          <size>
-           <width>16777215</width>
-           <height>20</height>
-          </size>
-         </property>
-         <property name="styleSheet">
-          <string>background-color: black; color: green; font-family: 'Courier New'; border: 1px solid green;</string>
-         </property>
-        </widget>
-       </item>
-       <item row="14" column="2">
-        <widget class="QTextEdit" name="usernameTextEdit_6">
-         <property name="maximumSize">
-          <size>
-           <width>16777215</width>
-           <height>20</height>
-          </size>
-         </property>
-         <property name="styleSheet">
-          <string>background-color: black; color: green; font-family: 'Courier New'; border: 1px solid green;</string>
-         </property>
-        </widget>
-       </item>
-       <item row="17" column="1">
-        <widget class="QTextEdit" name="nameTextEdit_12">
-         <property name="maximumSize">
-          <size>
-           <width>16777215</width>
-           <height>20</height>
-          </size>
-         </property>
-         <property name="styleSheet">
-          <string>background-color: black; color: green; font-family: 'Courier New'; border: 1px solid green;</string>
-         </property>
-        </widget>
-       </item>
-       <item row="10" column="2">
-        <widget class="QTextEdit" name="usernameTextEdit_10">
-         <property name="maximumSize">
-          <size>
-           <width>16777215</width>
-           <height>20</height>
-          </size>
-         </property>
-         <property name="styleSheet">
-          <string>background-color: black; color: green; font-family: 'Courier New'; border: 1px solid green;</string>
-         </property>
-        </widget>
-       </item>
-       <item row="12" column="1">
-        <widget class="QTextEdit" name="nameTextEdit_17">
-         <property name="maximumSize">
-          <size>
-           <width>16777215</width>
-           <height>20</height>
-          </size>
-         </property>
-         <property name="styleSheet">
-          <string>background-color: black; color: green; font-family: 'Courier New'; border: 1px solid green;</string>
-         </property>
-        </widget>
-       </item>
-       <item row="4" column="2">
-        <widget class="QTextEdit" name="usernameTextEdit_16">
-         <property name="maximumSize">
-          <size>
-           <width>16777215</width>
-           <height>20</height>
-          </size>
-         </property>
-         <property name="styleSheet">
-          <string>background-color: black; color: green; font-family: 'Courier New'; border: 1px solid green;</string>
-         </property>
-        </widget>
-       </item>
-       <item row="5" column="1">
-        <widget class="QTextEdit" name="nameTextEdit_7">
-         <property name="maximumSize">
-          <size>
-           <width>16777215</width>
-           <height>20</height>
-          </size>
-         </property>
-         <property name="styleSheet">
-          <string>background-color: black; color: green; font-family: 'Courier New'; border: 1px solid green;</string>
-         </property>
-        </widget>
-       </item>
-       <item row="6" column="3">
-        <widget class="QTextEdit" name="passwordTextEdit_8">
-         <property name="maximumSize">
-          <size>
-           <width>16777215</width>
-           <height>20</height>
-          </size>
-         </property>
-         <property name="styleSheet">
-          <string>background-color: black; color: green; font-family: 'Courier New'; border: 1px solid green;</string>
-         </property>
-        </widget>
-       </item>
-       <item row="17" column="3">
-        <widget class="QTextEdit" name="passwordTextEdit_17">
-         <property name="maximumSize">
-          <size>
-           <width>16777215</width>
-           <height>20</height>
-          </size>
-         </property>
-         <property name="styleSheet">
-          <string>background-color: black; color: green; font-family: 'Courier New'; border: 1px solid green;</string>
-         </property>
-        </widget>
-       </item>
-       <item row="15" column="2">
-        <widget class="QTextEdit" name="usernameTextEdit_7">
-         <property name="maximumSize">
-          <size>
-           <width>16777215</width>
-           <height>20</height>
-          </size>
-         </property>
-         <property name="styleSheet">
-          <string>background-color: black; color: green; font-family: 'Courier New'; border: 1px solid green;</string>
-         </property>
-        </widget>
-       </item>
-       <item row="1" column="3">
-        <widget class="QTextEdit" name="passwordTextEdit_2">
-         <property name="maximumSize">
-          <size>
-           <width>16777215</width>
-           <height>20</height>
-          </size>
-         </property>
-         <property name="styleSheet">
-          <string>background-color: black; color: green; font-family: 'Courier New'; border: 1px solid green;</string>
-         </property>
-        </widget>
-       </item>
-       <item row="11" column="2">
-        <widget class="QTextEdit" name="usernameTextEdit_11">
-         <property name="maximumSize">
-          <size>
-           <width>16777215</width>
-           <height>20</height>
-          </size>
-         </property>
-         <property name="styleSheet">
-          <string>background-color: black; color: green; font-family: 'Courier New'; border: 1px solid green;</string>
-         </property>
-        </widget>
-       </item>
-       <item row="13" column="2">
-        <widget class="QTextEdit" name="usernameTextEdit_8">
-         <property name="maximumSize">
-          <size>
-           <width>16777215</width>
-           <height>20</height>
-          </size>
-         </property>
-         <property name="styleSheet">
-          <string>background-color: black; color: green; font-family: 'Courier New'; border: 1px solid green;</string>
-         </property>
-        </widget>
-       </item>
-       <item row="8" column="2">
-        <widget class="QTextEdit" name="usernameTextEdit_13">
-         <property name="maximumSize">
-          <size>
-           <width>16777215</width>
-           <height>20</height>
-          </size>
-         </property>
-         <property name="styleSheet">
-          <string>background-color: black; color: green; font-family: 'Courier New'; border: 1px solid green;</string>
-         </property>
-        </widget>
-       </item>
-       <item row="2" column="1">
-        <widget class="QTextEdit" name="nameTextEdit_10">
-         <property name="maximumSize">
-          <size>
-           <width>16777215</width>
-           <height>20</height>
-          </size>
-         </property>
-         <property name="styleSheet">
-          <string>background-color: black; color: green; font-family: 'Courier New'; border: 1px solid green;</string>
-         </property>
-        </widget>
-       </item>
-       <item row="0" column="2">
-        <widget class="QTextEdit" name="usernameTextEdit">
-         <property name="maximumSize">
-          <size>
-           <width>16777215</width>
-           <height>20</height>
-          </size>
-         </property>
-         <property name="styleSheet">
-          <string>background-color: black; color: green; font-family: 'Courier New'; border: 1px solid green;</string>
-         </property>
-        </widget>
-       </item>
-       <item row="3" column="1">
-        <widget class="QTextEdit" name="nameTextEdit_8">
-         <property name="maximumSize">
-          <size>
-           <width>16777215</width>
-           <height>20</height>
-          </size>
-         </property>
-         <property name="styleSheet">
-          <string>background-color: black; color: green; font-family: 'Courier New'; border: 1px solid green;</string>
-         </property>
-        </widget>
-       </item>
-       <item row="5" column="3">
-        <widget class="QTextEdit" name="passwordTextEdit_6">
-         <property name="maximumSize">
-          <size>
-           <width>16777215</width>
-           <height>20</height>
-          </size>
-         </property>
-         <property name="styleSheet">
-          <string>background-color: black; color: green; font-family: 'Courier New'; border: 1px solid green;</string>
-         </property>
-        </widget>
-       </item>
-       <item row="13" column="1">
-        <widget class="QTextEdit" name="nameTextEdit_16">
-         <property name="maximumSize">
-          <size>
-           <width>16777215</width>
-           <height>20</height>
-          </size>
-         </property>
-         <property name="styleSheet">
-          <string>background-color: black; color: green; font-family: 'Courier New'; border: 1px solid green;</string>
-         </property>
-        </widget>
-       </item>
-       <item row="13" column="3">
-        <widget class="QTextEdit" name="passwordTextEdit_13">
-         <property name="maximumSize">
-          <size>
-           <width>16777215</width>
-           <height>20</height>
-          </size>
-         </property>
-         <property name="styleSheet">
-          <string>background-color: black; color: green; font-family: 'Courier New'; border: 1px solid green;</string>
-         </property>
-        </widget>
-       </item>
-       <item row="4" column="1">
-        <widget class="QTextEdit" name="nameTextEdit_9">
-         <property name="maximumSize">
-          <size>
-           <width>16777215</width>
-           <height>20</height>
-          </size>
-         </property>
-         <property name="styleSheet">
-          <string>background-color: black; color: green; font-family: 'Courier New'; border: 1px solid green;</string>
-         </property>
-        </widget>
-       </item>
-       <item row="3" column="3">
-        <widget class="QTextEdit" name="passwordTextEdit_3">
-         <property name="maximumSize">
-          <size>
-           <width>16777215</width>
-           <height>20</height>
-          </size>
-         </property>
-         <property name="styleSheet">
-          <string>background-color: black; color: green; font-family: 'Courier New'; border: 1px solid green;</string>
-         </property>
-        </widget>
-       </item>
-       <item row="8" column="3">
-        <widget class="QTextEdit" name="passwordTextEdit_10">
-         <property name="maximumSize">
-          <size>
-           <width>16777215</width>
-           <height>20</height>
-          </size>
-         </property>
-         <property name="styleSheet">
-          <string>background-color: black; color: green; font-family: 'Courier New'; border: 1px solid green;</string>
-         </property>
-        </widget>
-       </item>
-       <item row="14" column="3">
-        <widget class="QTextEdit" name="passwordTextEdit_15">
-         <property name="maximumSize">
-          <size>
-           <width>16777215</width>
-           <height>20</height>
-          </size>
-         </property>
-         <property name="styleSheet">
-          <string>background-color: black; color: green; font-family: 'Courier New'; border: 1px solid green;</string>
-         </property>
-        </widget>
-       </item>
-       <item row="0" column="1">
-        <widget class="QTextEdit" name="nameTextEdit">
-         <property name="maximumSize">
-          <size>
-           <width>16777215</width>
-           <height>20</height>
-          </size>
-         </property>
-         <property name="styleSheet">
-          <string>background-color: black; color: green; font-family: 'Courier New'; border: 1px solid green;</string>
-         </property>
-        </widget>
-       </item>
        <item row="3" column="2">
-        <widget class="QTextEdit" name="usernameTextEdit_3">
-         <property name="maximumSize">
-          <size>
-           <width>16777215</width>
-           <height>20</height>
-          </size>
-         </property>
-         <property name="styleSheet">
-          <string>background-color: black; color: green; font-family: 'Courier New'; border: 1px solid green;</string>
-         </property>
-        </widget>
-       </item>
-       <item row="10" column="3">
-        <widget class="QTextEdit" name="passwordTextEdit_12">
-         <property name="maximumSize">
-          <size>
-           <width>16777215</width>
-           <height>20</height>
-          </size>
-         </property>
-         <property name="styleSheet">
-          <string>background-color: black; color: green; font-family: 'Courier New'; border: 1px solid green;</string>
-         </property>
-        </widget>
-       </item>
-       <item row="11" column="3">
-        <widget class="QTextEdit" name="passwordTextEdit_11">
+        <widget class="QLineEdit" name="passwordTextEdit_3">
          <property name="maximumSize">
           <size>
            <width>16777215</width>
@@ -648,7 +76,137 @@
         </widget>
        </item>
        <item row="12" column="2">
-        <widget class="QTextEdit" name="usernameTextEdit_9">
+        <widget class="QLineEdit" name="passwordTextEdit_14">
+         <property name="maximumSize">
+          <size>
+           <width>16777215</width>
+           <height>20</height>
+          </size>
+         </property>
+         <property name="styleSheet">
+          <string>background-color: black; color: green; font-family: 'Courier New'; border: 1px solid green;</string>
+         </property>
+        </widget>
+       </item>
+       <item row="14" column="2">
+        <widget class="QLineEdit" name="passwordTextEdit_15">
+         <property name="maximumSize">
+          <size>
+           <width>16777215</width>
+           <height>20</height>
+          </size>
+         </property>
+         <property name="styleSheet">
+          <string>background-color: black; color: green; font-family: 'Courier New'; border: 1px solid green;</string>
+         </property>
+        </widget>
+       </item>
+       <item row="3" column="0">
+        <widget class="QLineEdit" name="nameTextEdit_8">
+         <property name="maximumSize">
+          <size>
+           <width>16777215</width>
+           <height>20</height>
+          </size>
+         </property>
+         <property name="styleSheet">
+          <string>background-color: black; color: green; font-family: 'Courier New'; border: 1px solid green;</string>
+         </property>
+        </widget>
+       </item>
+       <item row="1" column="0">
+        <widget class="QLineEdit" name="nameTextEdit_11">
+         <property name="maximumSize">
+          <size>
+           <width>16777215</width>
+           <height>20</height>
+          </size>
+         </property>
+         <property name="styleSheet">
+          <string>background-color: black; color: green; font-family: 'Courier New'; border: 1px solid green;</string>
+         </property>
+        </widget>
+       </item>
+       <item row="7" column="0">
+        <widget class="QLineEdit" name="nameTextEdit_5">
+         <property name="maximumSize">
+          <size>
+           <width>16777215</width>
+           <height>20</height>
+          </size>
+         </property>
+         <property name="styleSheet">
+          <string>background-color: black; color: green; font-family: 'Courier New'; border: 1px solid green;</string>
+         </property>
+        </widget>
+       </item>
+       <item row="15" column="0">
+        <widget class="QLineEdit" name="nameTextEdit_14">
+         <property name="maximumSize">
+          <size>
+           <width>16777215</width>
+           <height>20</height>
+          </size>
+         </property>
+         <property name="styleSheet">
+          <string>background-color: black; color: green; font-family: 'Courier New'; border: 1px solid green;</string>
+         </property>
+        </widget>
+       </item>
+       <item row="13" column="0">
+        <widget class="QLineEdit" name="nameTextEdit_16">
+         <property name="maximumSize">
+          <size>
+           <width>16777215</width>
+           <height>20</height>
+          </size>
+         </property>
+         <property name="styleSheet">
+          <string>background-color: black; color: green; font-family: 'Courier New'; border: 1px solid green;</string>
+         </property>
+        </widget>
+       </item>
+       <item row="1" column="1">
+        <widget class="QLineEdit" name="usernameTextEdit_2">
+         <property name="maximumSize">
+          <size>
+           <width>16777215</width>
+           <height>20</height>
+          </size>
+         </property>
+         <property name="styleSheet">
+          <string>background-color: black; color: green; font-family: 'Courier New'; border: 1px solid green;</string>
+         </property>
+        </widget>
+       </item>
+       <item row="17" column="0">
+        <widget class="QLineEdit" name="nameTextEdit_12">
+         <property name="maximumSize">
+          <size>
+           <width>16777215</width>
+           <height>20</height>
+          </size>
+         </property>
+         <property name="styleSheet">
+          <string>background-color: black; color: green; font-family: 'Courier New'; border: 1px solid green;</string>
+         </property>
+        </widget>
+       </item>
+       <item row="8" column="1">
+        <widget class="QLineEdit" name="usernameTextEdit_13">
+         <property name="maximumSize">
+          <size>
+           <width>16777215</width>
+           <height>20</height>
+          </size>
+         </property>
+         <property name="styleSheet">
+          <string>background-color: black; color: green; font-family: 'Courier New'; border: 1px solid green;</string>
+         </property>
+        </widget>
+       </item>
+       <item row="4" column="2">
+        <widget class="QLineEdit" name="passwordTextEdit_5">
          <property name="maximumSize">
           <size>
            <width>16777215</width>
@@ -661,7 +219,7 @@
         </widget>
        </item>
        <item row="16" column="1">
-        <widget class="QTextEdit" name="nameTextEdit_13">
+        <widget class="QLineEdit" name="usernameTextEdit_4">
          <property name="maximumSize">
           <size>
            <width>16777215</width>
@@ -673,60 +231,8 @@
          </property>
         </widget>
        </item>
-       <item row="16" column="2">
-        <widget class="QTextEdit" name="usernameTextEdit_4">
-         <property name="maximumSize">
-          <size>
-           <width>16777215</width>
-           <height>20</height>
-          </size>
-         </property>
-         <property name="styleSheet">
-          <string>background-color: black; color: green; font-family: 'Courier New'; border: 1px solid green;</string>
-         </property>
-        </widget>
-       </item>
-       <item row="12" column="3">
-        <widget class="QTextEdit" name="passwordTextEdit_14">
-         <property name="maximumSize">
-          <size>
-           <width>16777215</width>
-           <height>20</height>
-          </size>
-         </property>
-         <property name="styleSheet">
-          <string>background-color: black; color: green; font-family: 'Courier New'; border: 1px solid green;</string>
-         </property>
-        </widget>
-       </item>
-       <item row="15" column="1">
-        <widget class="QTextEdit" name="nameTextEdit_14">
-         <property name="maximumSize">
-          <size>
-           <width>16777215</width>
-           <height>20</height>
-          </size>
-         </property>
-         <property name="styleSheet">
-          <string>background-color: black; color: green; font-family: 'Courier New'; border: 1px solid green;</string>
-         </property>
-        </widget>
-       </item>
-       <item row="1" column="2">
-        <widget class="QTextEdit" name="usernameTextEdit_2">
-         <property name="maximumSize">
-          <size>
-           <width>16777215</width>
-           <height>20</height>
-          </size>
-         </property>
-         <property name="styleSheet">
-          <string>background-color: black; color: green; font-family: 'Courier New'; border: 1px solid green;</string>
-         </property>
-        </widget>
-       </item>
-       <item row="7" column="1">
-        <widget class="QTextEdit" name="nameTextEdit_5">
+       <item row="9" column="2">
+        <widget class="QLineEdit" name="passwordTextEdit_9">
          <property name="maximumSize">
           <size>
            <width>16777215</width>
@@ -739,7 +245,397 @@
         </widget>
        </item>
        <item row="5" column="2">
-        <widget class="QTextEdit" name="usernameTextEdit_17">
+        <widget class="QLineEdit" name="passwordTextEdit_6">
+         <property name="maximumSize">
+          <size>
+           <width>16777215</width>
+           <height>20</height>
+          </size>
+         </property>
+         <property name="styleSheet">
+          <string>background-color: black; color: green; font-family: 'Courier New'; border: 1px solid green;</string>
+         </property>
+        </widget>
+       </item>
+       <item row="2" column="1">
+        <widget class="QLineEdit" name="usernameTextEdit_18">
+         <property name="maximumSize">
+          <size>
+           <width>16777215</width>
+           <height>20</height>
+          </size>
+         </property>
+         <property name="styleSheet">
+          <string>background-color: black; color: green; font-family: 'Courier New'; border: 1px solid green;</string>
+         </property>
+        </widget>
+       </item>
+       <item row="5" column="1">
+        <widget class="QLineEdit" name="usernameTextEdit_17">
+         <property name="maximumSize">
+          <size>
+           <width>16777215</width>
+           <height>20</height>
+          </size>
+         </property>
+         <property name="styleSheet">
+          <string>background-color: black; color: green; font-family: 'Courier New'; border: 1px solid green;</string>
+         </property>
+        </widget>
+       </item>
+       <item row="11" column="2">
+        <widget class="QLineEdit" name="passwordTextEdit_11">
+         <property name="maximumSize">
+          <size>
+           <width>16777215</width>
+           <height>20</height>
+          </size>
+         </property>
+         <property name="styleSheet">
+          <string>background-color: black; color: green; font-family: 'Courier New'; border: 1px solid green;</string>
+         </property>
+        </widget>
+       </item>
+       <item row="12" column="0">
+        <widget class="QLineEdit" name="nameTextEdit_17">
+         <property name="maximumSize">
+          <size>
+           <width>16777215</width>
+           <height>20</height>
+          </size>
+         </property>
+         <property name="styleSheet">
+          <string>background-color: black; color: green; font-family: 'Courier New'; border: 1px solid green;</string>
+         </property>
+        </widget>
+       </item>
+       <item row="13" column="2">
+        <widget class="QLineEdit" name="passwordTextEdit_13">
+         <property name="maximumSize">
+          <size>
+           <width>16777215</width>
+           <height>20</height>
+          </size>
+         </property>
+         <property name="styleSheet">
+          <string>background-color: black; color: green; font-family: 'Courier New'; border: 1px solid green;</string>
+         </property>
+        </widget>
+       </item>
+       <item row="10" column="2">
+        <widget class="QLineEdit" name="passwordTextEdit_12">
+         <property name="maximumSize">
+          <size>
+           <width>16777215</width>
+           <height>20</height>
+          </size>
+         </property>
+         <property name="styleSheet">
+          <string>background-color: black; color: green; font-family: 'Courier New'; border: 1px solid green;</string>
+         </property>
+        </widget>
+       </item>
+       <item row="15" column="1">
+        <widget class="QLineEdit" name="usernameTextEdit_7">
+         <property name="maximumSize">
+          <size>
+           <width>16777215</width>
+           <height>20</height>
+          </size>
+         </property>
+         <property name="styleSheet">
+          <string>background-color: black; color: green; font-family: 'Courier New'; border: 1px solid green;</string>
+         </property>
+        </widget>
+       </item>
+       <item row="9" column="1">
+        <widget class="QLineEdit" name="usernameTextEdit_12">
+         <property name="maximumSize">
+          <size>
+           <width>16777215</width>
+           <height>20</height>
+          </size>
+         </property>
+         <property name="styleSheet">
+          <string>background-color: black; color: green; font-family: 'Courier New'; border: 1px solid green;</string>
+         </property>
+        </widget>
+       </item>
+       <item row="16" column="0">
+        <widget class="QLineEdit" name="nameTextEdit_13">
+         <property name="maximumSize">
+          <size>
+           <width>16777215</width>
+           <height>20</height>
+          </size>
+         </property>
+         <property name="styleSheet">
+          <string>background-color: black; color: green; font-family: 'Courier New'; border: 1px solid green;</string>
+         </property>
+        </widget>
+       </item>
+       <item row="0" column="2">
+        <widget class="QLineEdit" name="passwordTextEdit_1">
+         <property name="maximumSize">
+          <size>
+           <width>16777215</width>
+           <height>20</height>
+          </size>
+         </property>
+         <property name="styleSheet">
+          <string>background-color: black; color: green; font-family: 'Courier New'; border: 1px solid green;</string>
+         </property>
+        </widget>
+       </item>
+       <item row="6" column="1">
+        <widget class="QLineEdit" name="usernameTextEdit_15">
+         <property name="maximumSize">
+          <size>
+           <width>16777215</width>
+           <height>20</height>
+          </size>
+         </property>
+         <property name="styleSheet">
+          <string>background-color: black; color: green; font-family: 'Courier New'; border: 1px solid green;</string>
+         </property>
+        </widget>
+       </item>
+       <item row="17" column="1">
+        <widget class="QLineEdit" name="usernameTextEdit_5">
+         <property name="maximumSize">
+          <size>
+           <width>16777215</width>
+           <height>20</height>
+          </size>
+         </property>
+         <property name="styleSheet">
+          <string>background-color: black; color: green; font-family: 'Courier New'; border: 1px solid green;</string>
+         </property>
+        </widget>
+       </item>
+       <item row="4" column="0">
+        <widget class="QLineEdit" name="nameTextEdit_9">
+         <property name="maximumSize">
+          <size>
+           <width>16777215</width>
+           <height>20</height>
+          </size>
+         </property>
+         <property name="styleSheet">
+          <string>background-color: black; color: green; font-family: 'Courier New'; border: 1px solid green;</string>
+         </property>
+        </widget>
+       </item>
+       <item row="6" column="2">
+        <widget class="QLineEdit" name="passwordTextEdit_8">
+         <property name="maximumSize">
+          <size>
+           <width>16777215</width>
+           <height>20</height>
+          </size>
+         </property>
+         <property name="styleSheet">
+          <string>background-color: black; color: green; font-family: 'Courier New'; border: 1px solid green;</string>
+         </property>
+        </widget>
+       </item>
+       <item row="0" column="0">
+        <widget class="QLineEdit" name="nameTextEdit_1">
+         <property name="maximumSize">
+          <size>
+           <width>16777215</width>
+           <height>20</height>
+          </size>
+         </property>
+         <property name="styleSheet">
+          <string>background-color: black; color: green; font-family: 'Courier New'; border: 1px solid green;</string>
+         </property>
+        </widget>
+       </item>
+       <item row="9" column="0">
+        <widget class="QLineEdit" name="nameTextEdit_3">
+         <property name="maximumSize">
+          <size>
+           <width>16777215</width>
+           <height>20</height>
+          </size>
+         </property>
+         <property name="styleSheet">
+          <string>background-color: black; color: green; font-family: 'Courier New'; border: 1px solid green;</string>
+         </property>
+        </widget>
+       </item>
+       <item row="3" column="1">
+        <widget class="QLineEdit" name="usernameTextEdit_3">
+         <property name="maximumSize">
+          <size>
+           <width>16777215</width>
+           <height>20</height>
+          </size>
+         </property>
+         <property name="styleSheet">
+          <string>background-color: black; color: green; font-family: 'Courier New'; border: 1px solid green;</string>
+         </property>
+        </widget>
+       </item>
+       <item row="14" column="1">
+        <widget class="QLineEdit" name="usernameTextEdit_6">
+         <property name="maximumSize">
+          <size>
+           <width>16777215</width>
+           <height>20</height>
+          </size>
+         </property>
+         <property name="styleSheet">
+          <string>background-color: black; color: green; font-family: 'Courier New'; border: 1px solid green;</string>
+         </property>
+        </widget>
+       </item>
+       <item row="17" column="2">
+        <widget class="QLineEdit" name="passwordTextEdit_17">
+         <property name="maximumSize">
+          <size>
+           <width>16777215</width>
+           <height>20</height>
+          </size>
+         </property>
+         <property name="styleSheet">
+          <string>background-color: black; color: green; font-family: 'Courier New'; border: 1px solid green;</string>
+         </property>
+        </widget>
+       </item>
+       <item row="1" column="2">
+        <widget class="QLineEdit" name="passwordTextEdit_2">
+         <property name="maximumSize">
+          <size>
+           <width>16777215</width>
+           <height>20</height>
+          </size>
+         </property>
+         <property name="styleSheet">
+          <string>background-color: black; color: green; font-family: 'Courier New'; border: 1px solid green;</string>
+         </property>
+        </widget>
+       </item>
+       <item row="10" column="0">
+        <widget class="QLineEdit" name="nameTextEdit_2">
+         <property name="maximumSize">
+          <size>
+           <width>16777215</width>
+           <height>20</height>
+          </size>
+         </property>
+         <property name="styleSheet">
+          <string>background-color: black; color: green; font-family: 'Courier New'; border: 1px solid green;</string>
+         </property>
+        </widget>
+       </item>
+       <item row="0" column="1">
+        <widget class="QLineEdit" name="usernameTextEdit_1">
+         <property name="maximumSize">
+          <size>
+           <width>16777215</width>
+           <height>20</height>
+          </size>
+         </property>
+         <property name="styleSheet">
+          <string>background-color: black; color: green; font-family: 'Courier New'; border: 1px solid green;</string>
+         </property>
+        </widget>
+       </item>
+       <item row="8" column="2">
+        <widget class="QLineEdit" name="passwordTextEdit_10">
+         <property name="maximumSize">
+          <size>
+           <width>16777215</width>
+           <height>20</height>
+          </size>
+         </property>
+         <property name="styleSheet">
+          <string>background-color: black; color: green; font-family: 'Courier New'; border: 1px solid green;</string>
+         </property>
+        </widget>
+       </item>
+       <item row="2" column="0">
+        <widget class="QLineEdit" name="nameTextEdit_10">
+         <property name="maximumSize">
+          <size>
+           <width>16777215</width>
+           <height>20</height>
+          </size>
+         </property>
+         <property name="styleSheet">
+          <string>background-color: black; color: green; font-family: 'Courier New'; border: 1px solid green;</string>
+         </property>
+        </widget>
+       </item>
+       <item row="13" column="1">
+        <widget class="QLineEdit" name="usernameTextEdit_8">
+         <property name="maximumSize">
+          <size>
+           <width>16777215</width>
+           <height>20</height>
+          </size>
+         </property>
+         <property name="styleSheet">
+          <string>background-color: black; color: green; font-family: 'Courier New'; border: 1px solid green;</string>
+         </property>
+        </widget>
+       </item>
+       <item row="2" column="2">
+        <widget class="QLineEdit" name="passwordTextEdit_4">
+         <property name="maximumSize">
+          <size>
+           <width>16777215</width>
+           <height>20</height>
+          </size>
+         </property>
+         <property name="styleSheet">
+          <string>background-color: black; color: green; font-family: 'Courier New'; border: 1px solid green;</string>
+         </property>
+        </widget>
+       </item>
+       <item row="4" column="1">
+        <widget class="QLineEdit" name="usernameTextEdit_16">
+         <property name="maximumSize">
+          <size>
+           <width>16777215</width>
+           <height>20</height>
+          </size>
+         </property>
+         <property name="styleSheet">
+          <string>background-color: black; color: green; font-family: 'Courier New'; border: 1px solid green;</string>
+         </property>
+        </widget>
+       </item>
+       <item row="16" column="2">
+        <widget class="QLineEdit" name="passwordTextEdit_18">
+         <property name="maximumSize">
+          <size>
+           <width>16777215</width>
+           <height>20</height>
+          </size>
+         </property>
+         <property name="styleSheet">
+          <string>background-color: black; color: green; font-family: 'Courier New'; border: 1px solid green;</string>
+         </property>
+        </widget>
+       </item>
+       <item row="15" column="2">
+        <widget class="QLineEdit" name="passwordTextEdit_16">
+         <property name="maximumSize">
+          <size>
+           <width>16777215</width>
+           <height>20</height>
+          </size>
+         </property>
+         <property name="styleSheet">
+          <string>background-color: black; color: green; font-family: 'Courier New'; border: 1px solid green;</string>
+         </property>
+        </widget>
+       </item>
+       <item row="5" column="0">
+        <widget class="QLineEdit" name="nameTextEdit_7">
          <property name="maximumSize">
           <size>
            <width>16777215</width>
@@ -752,7 +648,7 @@
         </widget>
        </item>
        <item row="11" column="1">
-        <widget class="QTextEdit" name="nameTextEdit_18">
+        <widget class="QLineEdit" name="usernameTextEdit_11">
          <property name="maximumSize">
           <size>
            <width>16777215</width>
@@ -764,10 +660,107 @@
          </property>
         </widget>
        </item>
-       <item row="0" column="0" rowspan="18">
-        <widget class="QScrollBar" name="verticalSlider">
-         <property name="orientation">
-          <enum>Qt::Orientation::Vertical</enum>
+       <item row="10" column="1">
+        <widget class="QLineEdit" name="usernameTextEdit_10">
+         <property name="maximumSize">
+          <size>
+           <width>16777215</width>
+           <height>20</height>
+          </size>
+         </property>
+         <property name="styleSheet">
+          <string>background-color: black; color: green; font-family: 'Courier New'; border: 1px solid green;</string>
+         </property>
+        </widget>
+       </item>
+       <item row="8" column="0">
+        <widget class="QLineEdit" name="nameTextEdit_4">
+         <property name="maximumSize">
+          <size>
+           <width>16777215</width>
+           <height>20</height>
+          </size>
+         </property>
+         <property name="styleSheet">
+          <string>background-color: black; color: green; font-family: 'Courier New'; border: 1px solid green;</string>
+         </property>
+        </widget>
+       </item>
+       <item row="11" column="0">
+        <widget class="QLineEdit" name="nameTextEdit_18">
+         <property name="maximumSize">
+          <size>
+           <width>16777215</width>
+           <height>20</height>
+          </size>
+         </property>
+         <property name="styleSheet">
+          <string>background-color: black; color: green; font-family: 'Courier New'; border: 1px solid green;</string>
+         </property>
+        </widget>
+       </item>
+       <item row="12" column="1">
+        <widget class="QLineEdit" name="usernameTextEdit_9">
+         <property name="maximumSize">
+          <size>
+           <width>16777215</width>
+           <height>20</height>
+          </size>
+         </property>
+         <property name="styleSheet">
+          <string>background-color: black; color: green; font-family: 'Courier New'; border: 1px solid green;</string>
+         </property>
+        </widget>
+       </item>
+       <item row="7" column="2">
+        <widget class="QLineEdit" name="passwordTextEdit_7">
+         <property name="maximumSize">
+          <size>
+           <width>16777215</width>
+           <height>20</height>
+          </size>
+         </property>
+         <property name="styleSheet">
+          <string>background-color: black; color: green; font-family: 'Courier New'; border: 1px solid green;</string>
+         </property>
+        </widget>
+       </item>
+       <item row="14" column="0">
+        <widget class="QLineEdit" name="nameTextEdit_15">
+         <property name="maximumSize">
+          <size>
+           <width>16777215</width>
+           <height>20</height>
+          </size>
+         </property>
+         <property name="styleSheet">
+          <string>background-color: black; color: green; font-family: 'Courier New'; border: 1px solid green;</string>
+         </property>
+        </widget>
+       </item>
+       <item row="7" column="1">
+        <widget class="QLineEdit" name="usernameTextEdit_14">
+         <property name="maximumSize">
+          <size>
+           <width>16777215</width>
+           <height>20</height>
+          </size>
+         </property>
+         <property name="styleSheet">
+          <string>background-color: black; color: green; font-family: 'Courier New'; border: 1px solid green;</string>
+         </property>
+        </widget>
+       </item>
+       <item row="6" column="0">
+        <widget class="QLineEdit" name="nameTextEdit_6">
+         <property name="maximumSize">
+          <size>
+           <width>16777215</width>
+           <height>20</height>
+          </size>
+         </property>
+         <property name="styleSheet">
+          <string>background-color: black; color: green; font-family: 'Courier New'; border: 1px solid green;</string>
          </property>
         </widget>
        </item>
