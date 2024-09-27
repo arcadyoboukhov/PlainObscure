@@ -2,7 +2,7 @@
 
 ![License](https://img.shields.io/badge/license-GNU%20GPL%20v3-blue.svg
 ) 
-PlainObscure is a program that creates, views, and manages password databases. The main feature is its hiding of password databases in large PNG images (2mg and more) with LSB. It keeps passwords in an SQL database which is encrypted with AES-256-CBC encryption (without IVs because I was too busy to make it). The data is also compressed before encryption. So the master password handling uses PBKDF2 with HMAC-SHA256, 32-byte salt, and one million iterations (change the code if too much). 
+PlainObscure is a program that creates, views, and manages password databases. The main feature is its hiding of password databases in large PNG images with LSB. It keeps passwords in JSON which is encrypted with AES-256-CBC encryption (without IVs because I was too busy to make it). The data is also compressed before encryption. So the master password handling uses PBKDF2 with HMAC-SHA256, 32-byte salt, and one million iterations (change the code if too much). 
   
 
 DATA INSERTED ON SETUP IS FAKE!!! 
