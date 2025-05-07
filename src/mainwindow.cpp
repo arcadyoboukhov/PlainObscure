@@ -16,8 +16,7 @@ MainWindow::MainWindow(QWidget *parent)
     connect(ui->pushButton, &QPushButton::clicked, this, &MainWindow::onSelectImagesButtonClicked);
 
 
-
-    // Connect signals and slots
+    
     connect(ui->pushButton_2, &QPushButton::clicked, this, &MainWindow::hide);
     connect(ui->pushButton_2, &QPushButton::clicked, formInstance, &Form::show);
 }
@@ -25,10 +24,10 @@ MainWindow::MainWindow(QWidget *parent)
 void MainWindow::onSelectImagesButtonClicked() {
     passwordInstance->show();
     this->hide();
-    // If you want to use the password instance's method to select images, you could do the following:
+    
     QString selectedImages = passwordInstance->onSelectImagesButtonClicked(this);
 
-    // If you want to debug and see the selected files:
+    
     qDebug() << "Selected images:" << selectedImages;
 }
 
@@ -36,8 +35,8 @@ void MainWindow::onSelectImagesButtonClicked() {
 
 MainWindow::~MainWindow()
 {
-    delete formInstance;      // Proper cleanup
+    delete formInstance;      
     delete passwordInstance;
-    delete ui;                // Proper cleanup
+    delete ui;                
     qDebug() << "MainWindow destructor called";
 }
