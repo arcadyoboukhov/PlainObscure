@@ -22,7 +22,7 @@ public:
     ~MainWindow();
 
 public slots:
-    void onSelectImagesButtonClicked(); // Add this line to declare the slot
+    void onSelectImagesButtonClicked(); 
 
 public:
     Ui::MainWindow *ui;
@@ -30,4 +30,4 @@ public:
     password *passwordInstance;
 };
 
-#endif // MAINWINDOW_H
+#endif 
