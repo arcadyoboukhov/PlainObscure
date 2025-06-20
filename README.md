@@ -1,4 +1,4 @@
-# PlainObscure 
+# PlainObscure (WIP)
 
 ![License](https://img.shields.io/badge/license-GNU%20GPL%20v3-blue.svg
 ) 
